@@ -45,7 +45,6 @@ ro.ril.telephony.mqanelements=6
 # zRAM
 ro.config.zram.compressor=lz4
 ro.config.zram.disksize=128M
-ro.config.swappiness=100
 
 # ADB
 #persist.sys.adb.shell=/system/xbin/bash
