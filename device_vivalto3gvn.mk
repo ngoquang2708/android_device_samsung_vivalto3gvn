@@ -76,6 +76,7 @@ PRODUCT_PACKAGES += \
 	audio_policy.scx15 \
 	audio.r_submix.default \
 	audio.usb.default \
+	libaudio-resampler \
 	libtinyalsa
 
 # Wifi

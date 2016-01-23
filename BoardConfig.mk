@@ -49,6 +49,7 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/vivalto3gvn/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/vivalto3gvn/bluetooth/libbt_vndcfg.txt
+#USE_BLUETOOTH_BCM4343 := true
 
 # Wifi
 BOARD_WLAN_DEVICE := bcmdhd

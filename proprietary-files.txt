@@ -104,6 +104,7 @@ lib/libstagefright_sprd_mp3dec.so
 lib/libomx_vpxdec_hw_sprd.so
 lib/libMali.so
 lib/libboost.so
+lib/libbt-hci.so
 lib/egl/libEGL_mali.so
 lib/egl/libGLESv1_CM_mali.so
 lib/egl/libGLESv2_mali.so
@@ -134,6 +135,7 @@ media/battery_charging_95.qmg
 media/battery_error.qmg
 media/chargingwarning.qmg
 media/Disconnected.qmg
+vendor/lib/libbt-vendor.so
 vendor/lib/libwvdrm_L3.so
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so
