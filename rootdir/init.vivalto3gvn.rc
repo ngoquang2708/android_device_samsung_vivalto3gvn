@@ -1,13 +1,2 @@
 import init.vivalto3gvn_base.rc
 import init.wifi.rc
-
-# for BT-PANU
-service dhcpcd_bt-pan /system/bin/dhcpcd -BKL
-    class main
-    disabled
-    oneshot
-
-service iprenew_bt-pan /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
