@@ -175,7 +175,7 @@ TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,SM-G313HZ,vivalto3gvndx
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
 # Enable dex-preoptimization to speed up the first boot sequence
-WITH_DEXPREOPT := true
+#WITH_DEXPREOPT := true # Disabled, since Xposed doesn't need this, and it recompiles all apps with its own libart/dex2oat
 
 # CMHW
 BOARD_HARDWARE_CLASS := device/samsung/vivalto3gvn/cmhw/
