@@ -14,7 +14,6 @@ on init
     # See storage config details at https://source.android.com/devices/storage/
 
     # Support legacy paths
-    symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
     # map "real" external storages paths also in same way. backwards compatibility.
