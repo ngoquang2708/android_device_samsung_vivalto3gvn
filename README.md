@@ -54,3 +54,5 @@ the 2nd for to revert the patches which applied earlier
 
 		patch -p1 < audio.patch
 		patch -R -p1 <audio.patch
+
+Patch for OpenGAPPS: https://github.com/TeamExodus/frameworks_base/commit/9c36be651e83fb039a262682839bd920b033007a

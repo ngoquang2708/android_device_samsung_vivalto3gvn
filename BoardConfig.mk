@@ -91,46 +91,11 @@ COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 COMMON_GLOBAL_CFLAGS += -DBOARD_CANT_REALLOCATE_OMX_BUFFERS
 
 # Board specific features
-#BOARD_USE_VETH := true
-#BOARD_SPRD_RIL := true
-#BOARD_SAMSUNG_RIL := true
 BOARD_USE_SAMSUNG_COLORFORMAT := true
 COMMON_GLOBAL_CFLAGS += -DSPRD_HARDWARE
 
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd-vivalto3gvn.scx15
-
-# Camera
-TARGET_BOARD_CAMERA_HAL_VERSION := HAL1.0
-#android zsl capture
-TARGET_BOARD_CAMERA_ANDROID_ZSL_MODE := false
-#back camera rotation capture
-TARGET_BOARD_BACK_CAMERA_ROTATION := false
-#front camera rotation capture
-TARGET_BOARD_FRONT_CAMERA_ROTATION := false
-#rotation capture
-TARGET_BOARD_CAMERA_ROTATION_CAPTURE := false
-# select camera 2M,3M,5M,8M
-CAMERA_SUPPORT_SIZE := 3M
-#
-TARGET_BOARD_NO_FRONT_SENSOR := false
-#
-TARGET_BOARD_CAMERA_FLASH_CTRL := true
-#select camera zsl cap mode
-TARGET_BOARD_CAMERA_CAPTURE_MODE := false
-#face detect
-TARGET_BOARD_CAMERA_FACE_DETECT := false
-#
-TARGET_BOARD_CAMERA_USE_IOMMU := true
-TARGET_BOARD_CAMERA_DMA_COPY := true
-#
-TARGET_BOARD_BACK_CAMERA_INTERFACE := ccir
-TARGET_BOARD_FRONT_CAMERA_INTERFACE := ccir
-#select continuous auto focus
-TARGET_BOARD_CAMERA_CAF := true
-#
-CONFIG_CAMERA_ISP := true
-COMMON_GLOBAL_CFLAGS += -DCONFIG_CAMERA_ISP
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -149,7 +114,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,SM-G313HZ,vivalto3gvndx
+TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G313HZ,SM-G313H,SM-G313ML
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
@@ -160,6 +125,7 @@ MALLOC_IMPL := dlmalloc
 # Enable dex-preoptimization to speed up the first boot sequence
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_PIC := true
+WITH_DEXPREOPT_COMP := false
 
 # CMHW
 BOARD_HARDWARE_CLASS := device/samsung/vivalto3gvn/cmhw/

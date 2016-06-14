@@ -95,4 +95,4 @@ ro.config.zram.disksize=256M
 ro.config.swappiness=100
 
 # PLEASE REMOVE ME
-qemu.hw.mainkeys=0
+# qemu.hw.mainkeys=0
