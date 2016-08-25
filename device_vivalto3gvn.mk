@@ -76,14 +76,6 @@ KEYLAYOUT_FILES := \
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(KEYLAYOUT_FILES),$(f):system/usr/keylayout/$(notdir $(f)))
 
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-	e2fsck \
-	f2fstat \
-	fsck.f2fs \
-	fibmap.f2fs \
-	mkfs.f2fs
-
 # Bluetooth config
 BLUETOOTH_CONFIGS := \
 	device/samsung/vivalto3gvn/configs/bluetooth/bt_vendor.conf
