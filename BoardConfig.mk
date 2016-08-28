@@ -109,9 +109,10 @@ BACKLIGHT_PATH := /sys/class/backlight/panel/brightness
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_KERNEL_CONFIG := cyanogen_vivalto3gvn_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/vivalto3gvn
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+#TARGET_KERNEL_CONFIG := cyanogen_vivalto3gvn_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/vivalto3gvn
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+TARGET_PREBUILT_KERNEL := device/samsung/vivalto3gvn/kernel
 
 # Init
 TARGET_NR_SVC_SUPP_GIDS := 24
