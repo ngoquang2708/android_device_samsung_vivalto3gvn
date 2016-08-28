@@ -123,8 +123,8 @@ TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
 
-# Use dmalloc() for low memory device
-MALLOC_IMPL := dlmalloc
+# Configure jemalloc for low-memory
+MALLOC_SVELTE := true
 
 # Enable dex-preoptimization to speed up the first boot sequence
 WITH_DEXPREOPT := true
