@@ -36,21 +36,21 @@
 	</path>
 
 	<!-- MUST NOT modify private field directly -->
-	<private name="vb control"><func name="VBC Switch" val="arm" />
-	<private name="eq update"><func name="VBC EQ Update" val="0" />
-	<private name="da eq switch"><func name="VBC DA EQ Switch" val="0" />
-	<private name="ad01 eq switch"><func name="VBC AD01 EQ Switch" val="0" />
-	<private name="ad23 eq switch"><func name="VBC AD02 EQ Switch" val="0" />
-	<private name="da eq profile"><func name="VBC DA EQ Profile Select" val="0" />
-	<private name="ad01 eq profile"><func name="VBC AD01 EQ Profile Select" val="0" />
-	<private name="ad23 eq profile"><func name="VBC AD23 EQ Profile Select" val="0" />
-	<private name="internal PA"><func name="Inter PA Config" val="304" />
-	<private name="spk mute"><func name="Speaker Mute" val="0" />
-	<private name="earpiece mute"><func name="Earpiece Mute" val="0" />
-	<private name="hp mute"><func name="HeadPhone Mute" val="0" />
-	<private name="fm mute"><func name="Headphone Internal Mute" val="0" />
-	<private name="Aud Loop in VBC Switch"><func name="Aud Loop in VBC Switch" val="0" />
-	<private name="Aud1 Loop in VBC Switch"><func name="Aud1 Loop in VBC Switch" val="0" />
+	<private name="vb control"><func name="VBC Switch" val="arm" /></private>
+	<private name="eq update"><func name="VBC EQ Update" val="0" /></private>
+	<private name="da eq switch"><func name="VBC DA EQ Switch" val="0" /></private>
+	<private name="ad01 eq switch"><func name="VBC AD01 EQ Switch" val="0" /></private>
+	<private name="ad23 eq switch"><func name="VBC AD02 EQ Switch" val="0" /></private>
+	<private name="da eq profile"><func name="VBC DA EQ Profile Select" val="0" /></private>
+	<private name="ad01 eq profile"><func name="VBC AD01 EQ Profile Select" val="0" /></private>
+	<private name="ad23 eq profile"><func name="VBC AD23 EQ Profile Select" val="0" /></private>
+	<private name="internal PA"><func name="Inter PA Config" val="304" /></private>
+	<private name="spk mute"><func name="Speaker Mute" val="0" /></private>
+	<private name="earpiece mute"><func name="Earpiece Mute" val="0" /></private>
+	<private name="hp mute"><func name="HeadPhone Mute" val="0" /></private>
+	<private name="fm mute"><func name="Headphone Internal Mute" val="0" /></private>
+	<private name="Aud Loop in VBC Switch"><func name="Aud Loop in VBC Switch" val="0" /></private>
+	<private name="Aud1 Loop in VBC Switch"><func name="Aud1 Loop in VBC Switch" val="0" /></private>
 	<!-- END OF MUST NOT modify private field directly -->
 
 	<!-- List of devices -->
