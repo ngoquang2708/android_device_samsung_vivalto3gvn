@@ -55,3 +55,6 @@ ro.sys.fw.bg_apps_limit=16
 ro.config.zram.compressor=lz4
 ro.config.zram.disksize=128M
 ro.config.swappiness=100
+
+# ADB
+persist.sys.adb.shell=/system/xbin/bash
