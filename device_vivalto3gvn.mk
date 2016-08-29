@@ -47,7 +47,6 @@ TARGET_SCREEN_WIDTH := 480
 
 # Rootdir files
 ROOTDIR_FILES := \
-	device/samsung/vivalto3gvn/rootdir/init.rc \
 	device/samsung/vivalto3gvn/rootdir/init.board.rc \
 	device/samsung/vivalto3gvn/rootdir/init.scx15.rc \
 	device/samsung/vivalto3gvn/rootdir/init.scx15.usb.rc \
