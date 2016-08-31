@@ -23,6 +23,11 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/vivalto3gvn/device_vivalto3gvn.mk)
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+	device/samsung/vivalto3gvn/overlay \
+	device/samsung/vivalto3gvn/overlay_cm \
+
 # Override build date
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 

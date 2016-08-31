@@ -33,9 +33,6 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 # WiFi BCMDHD
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/firmware/bcm4343/device-bcm.mk)
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/vivalto3gvn/overlay
-
 # AAPT configuration
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
