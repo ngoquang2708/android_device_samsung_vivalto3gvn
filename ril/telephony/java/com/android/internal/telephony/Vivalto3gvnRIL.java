@@ -64,7 +64,7 @@ public class Vivalto3gvnRIL extends SamsungSPRDRIL implements CommandsInterface 
                     Rlog.d(RILJ_LOG_TAG, "setTelephonyProperty: success" +
                             " phoneId=" + phoneId +
                             " property=" + property +
-                            " value: " + value +
+                            " value=" + value +
                             " actualProp=" + actualProp +
                             " propVal=" + propVal);
                     SystemProperties.set(actualProp, propVal);
