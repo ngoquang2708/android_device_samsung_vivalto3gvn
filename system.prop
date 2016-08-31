@@ -1,9 +1,5 @@
-#
-# system.prop for vivalto3gvn
-#
-
 # HW
-ro.product.hardware=CORSICA_VE_V1.0.0
+ro.product.hardware=VIVALTO_V1.0.0
 
 # Graphics
 ro.sf.lcd_density=240
