@@ -39,6 +39,7 @@ persist.radio.multisim.config=dsds
 ro.telephony.ril_class=Vivalto3gvnRIL
 ro.telephony.prop_class=Vivalto3gvnRIL$TelephonyPropertyProvider
 ro.telephony.ril.config=setPrefNwTypeOnUnsolConnected,simactivation,sim2gsmonly
+ro.telephony.ril.socket_name=rild,rild1,rild2
 ro.ril.telephony.mqanelements=6
 
 # Low memory device
