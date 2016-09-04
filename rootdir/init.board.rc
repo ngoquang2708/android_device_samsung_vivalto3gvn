@@ -4,17 +4,3 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     mkdir /data/system 0770 system system
-
-service engpcclientw /system/bin/engpc -t 0 -a /dev/ttyGS0 -d /dev/ttyGS1
-    class late_start
-    user system
-    group system radio shell
-    disabled
-    oneshot
-
-service engpcclientwcn /system/bin/engpc -t 2 -a /dev/ttyGS2 -d /dev/ttyGS3
-    class late_start
-    user system
-    group system radio shell
-    disabled
-    oneshot
