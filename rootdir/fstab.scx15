@@ -21,3 +21,6 @@
 /dev/block/platform/sprd-sdhci.3/by-name/RECOVERY /recovery emmc defaults recoveryonly
 /dev/block/platform/sprd-sdhci.3/by-name/modem /modem emmc defaults recoveryonly
 /dev/block/platform/sprd-sdhci.3/by-name/DSP /modem2 emmc defaults recoveryonly
+
+# zRAM
+/dev/block/zram0 none swap defaults swapprio=0

@@ -53,7 +53,6 @@ ROOTDIR_FILES := \
 	device/samsung/vivalto3gvn/rootdir/init.wifi.rc \
 	device/samsung/vivalto3gvn/rootdir/ueventd.scx15.rc \
 	device/samsung/vivalto3gvn/rootdir/fstab.scx15 \
-	device/samsung/vivalto3gvn/rootdir/fstab.swap \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(ROOTDIR_FILES),$(f):root/$(notdir $(f)))

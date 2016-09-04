@@ -11,4 +11,4 @@ on property:ro.config.zram.compressor=*
 
 on property:ro.config.zram.disksize=*
     write /sys/block/zram0/disksize ${ro.config.zram.disksize}
-    swapon_all /fstab.swap
+    swapon_all /fstab.scx15
