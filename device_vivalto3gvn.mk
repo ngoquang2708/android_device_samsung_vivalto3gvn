@@ -64,6 +64,7 @@ SYSTEM_INIT_RC_FILES := \
 	device/samsung/vivalto3gvn/system/etc/init/at_distributor.rc \
 	device/samsung/vivalto3gvn/system/etc/init/gpsd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/rild.rc \
+	device/samsung/vivalto3gvn/system/etc/init/wpa_supplicant.rc \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(SYSTEM_INIT_RC_FILES),$(f):system/etc/init/$(notdir $(f)))
