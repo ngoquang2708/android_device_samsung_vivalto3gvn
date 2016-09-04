@@ -59,6 +59,13 @@ ROOTDIR_FILES := \
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(ROOTDIR_FILES),$(f):root/$(notdir $(f)))
 
+# System init .rc files
+SYSTEM_INIT_RC_FILES := \
+	device/samsung/vivalto3gvn/system/etc/init/rild.rc \
+
+PRODUCT_COPY_FILES += \
+	$(foreach f,$(SYSTEM_INIT_RC_FILES),$(f):system/etc/init/$(notdir $(f)))
+
 # Recovery
 PRODUCT_COPY_FILES += \
 	device/samsung/vivalto3gvn/rootdir/init.recovery.scx15.rc:root/init.recovery.scx15.rc \
