@@ -327,8 +327,3 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     group system inet net_raw
     ioprio be 0
     setenv LD_SHIM_LIBS /system/bin/gpsd|libgps_shim.so
-
-service at_distributor /system/bin/at_distributor
-    class late_start
-    user root
-    group radio misc log
