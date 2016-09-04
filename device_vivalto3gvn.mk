@@ -63,6 +63,7 @@ PRODUCT_COPY_FILES += \
 SYSTEM_INIT_RC_FILES := \
 	device/samsung/vivalto3gvn/system/etc/init/at_distributor.rc \
 	device/samsung/vivalto3gvn/system/etc/init/gpsd.rc \
+	device/samsung/vivalto3gvn/system/etc/init/hostapd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/macloader.rc \
 	device/samsung/vivalto3gvn/system/etc/init/p2p_supplicant.rc \
 	device/samsung/vivalto3gvn/system/etc/init/rild.rc \
