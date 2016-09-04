@@ -62,11 +62,20 @@ PRODUCT_COPY_FILES += \
 # System init .rc files
 SYSTEM_INIT_RC_FILES := \
 	device/samsung/vivalto3gvn/system/etc/init/at_distributor.rc \
+	device/samsung/vivalto3gvn/system/etc/init/chown_service.rc \
+	device/samsung/vivalto3gvn/system/etc/init/data.rc \
 	device/samsung/vivalto3gvn/system/etc/init/gpsd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/hostapd.rc \
+	device/samsung/vivalto3gvn/system/etc/init/kill_phone.rc \
 	device/samsung/vivalto3gvn/system/etc/init/macloader.rc \
+	device/samsung/vivalto3gvn/system/etc/init/modemd.rc \
+	device/samsung/vivalto3gvn/system/etc/init/nvitemd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/p2p_supplicant.rc \
+	device/samsung/vivalto3gvn/system/etc/init/phoneserver.rc \
+	device/samsung/vivalto3gvn/system/etc/init/refnotify.rc \
 	device/samsung/vivalto3gvn/system/etc/init/rild.rc \
+	device/samsung/vivalto3gvn/system/etc/init/set_mac.rc \
+	device/samsung/vivalto3gvn/system/etc/init/smd_symlink.rc \
 	device/samsung/vivalto3gvn/system/etc/init/wpa_supplicant.rc \
 
 PRODUCT_COPY_FILES += \

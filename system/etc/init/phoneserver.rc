@@ -1,0 +1,13 @@
+service phoneserver_t /system/bin/phoneserver -m t
+    class core
+    user root
+    group radio system shell
+    disabled
+    oneshot
+
+service phoneserver_w /system/bin/phoneserver -m w
+    class core
+    user root
+    group radio system shell
+    disabled
+    oneshot
