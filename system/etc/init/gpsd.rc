@@ -12,4 +12,5 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     user gps
     group system inet net_raw
     ioprio be 0
-    setenv LD_SHIM_LIBS /system/bin/gpsd|libgps_shim.so
+    #setenv LD_SHIM_LIBS /system/bin/gpsd|libgps_shim.so
+    setenv LD_PRELOAD /system/lib/libgps_shim.so
