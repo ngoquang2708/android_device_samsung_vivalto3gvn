@@ -124,8 +124,9 @@ TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G
 # Build system
 USE_NINJA := false
 
-# Configure jemalloc for low-memory
+# Memory
 MALLOC_SVELTE := true
+BOARD_USES_LEGACY_MMAP := true
 
 # Enable dex-preoptimization to speed up the first boot sequence
 WITH_DEXPREOPT := true
