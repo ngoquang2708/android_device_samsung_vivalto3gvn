@@ -42,13 +42,6 @@ ro.telephony.ril.config=setPrefNwTypeOnUnsolConnected,simactivation,sim2gsmonly
 ro.telephony.ril.socket_name=rild,rild1,rild2
 ro.ril.telephony.mqanelements=6
 
-# Low memory device
-ro.config.low_ram=true
-persist.sys.force_highendgfx=true
-config.disable_atlas=true
-ro.config.max_starting_bg=8
-ro.sys.fw.bg_apps_limit=16
-
 # zRAM
 ro.config.zram.compressor=lz4
 ro.config.zram.disksize=128M
