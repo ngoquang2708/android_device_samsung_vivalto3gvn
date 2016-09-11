@@ -117,7 +117,7 @@ TARGET_PREBUILT_KERNEL := device/samsung/vivalto3gvn/kernel
 TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G313HZ,SM-G313H,SM-G313ML
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
 
 # Build system
 USE_NINJA := false
