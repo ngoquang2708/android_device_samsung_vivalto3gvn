@@ -113,9 +113,6 @@ BOARD_KERNEL_PAGESIZE := 2048
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 TARGET_PREBUILT_KERNEL := device/samsung/vivalto3gvn/kernel
 
-# Init
-TARGET_NR_SVC_SUPP_GIDS := 24
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G313HZ,SM-G313H,SM-G313ML
 
