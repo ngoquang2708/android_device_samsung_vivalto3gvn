@@ -1,6 +1,0 @@
-on boot
-    chmod 660 /sys/class/rfkill/rfkill0/state
-    chmod 660 /sys/class/rfkill/rfkill0/type
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
-    mkdir /data/system 0770 system system

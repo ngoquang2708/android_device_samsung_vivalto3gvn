@@ -48,7 +48,6 @@ PRODUCT_COPY_FILES += \
 
 # Rootdir files
 ROOTDIR_FILES := \
-	device/samsung/vivalto3gvn/rootdir/init.board.rc \
 	device/samsung/vivalto3gvn/rootdir/init.scx15.rc \
 	device/samsung/vivalto3gvn/rootdir/init.scx15.usb.rc \
 	device/samsung/vivalto3gvn/rootdir/init.scx15_ss.rc \

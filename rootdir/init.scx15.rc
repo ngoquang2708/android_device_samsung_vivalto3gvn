@@ -1,13 +1,13 @@
-import /init.board.rc
 import /init.scx15.usb.rc
 import /init.scx15_ss.rc
 
 on early-init
-    # set core dump resource limit
+# set core dump resource limit
     setrlimit 4 -1 -1
 
-    # coredump file will not be generated in release version
+# coredump file will not be generated in release version
     write /proc/sys/kernel/core_pattern /dev/null
+
 # radio pipe
     mkdir /dev/rpipe 0550 radio radio
     pipe 666 /dev/rpipe/ril.vt.0
@@ -47,31 +47,10 @@ on fs
     chmod 664 /sys/devices/platform/scxx30-dmcfreq.0/devfreq/scxx30-dmcfreq.0/max_freq
     chmod 664 /sys/devices/platform/scxx30-dmcfreq.0/devfreq/scxx30-dmcfreq.0/available_frequencies
 
-# permissions for sensors (accelerometer)
-    chown system system /sys/class/input/input0/enable
-    chown system system /sys/class/input/input0/delay
-    chown system system /sys/class/input/input0/poll_delay
-    chmod 0660 /sys/class/input/input0/enable
-    chmod 0660 /sys/class/input/input0/delay
-    chmod 0660 /sys/class/input/input0/poll_delay
-
-    chown system system /sys/class/input/input1/enable
-    chown system system /sys/class/input/input1/delay
-    chown system system /sys/class/input/input1/poll_delay
-    chmod 0660 /sys/class/input/input1/enable
-    chmod 0660 /sys/class/input/input1/delay
-    chmod 0660 /sys/class/input/input1/poll_delay
-
 # permissions for TSP
     chown system system /sys/class/sec/tsp/cmd
-
     chmod 0664 /sys/class/sec/tsp/cmd
 
-on charger
-    mount ext4 /dev/block/mmcblk0p18 /system ro,barrier=1 wait
-    exec sfsck /dev/block/mmcblk0p20 ext4
-    mount ext4 /dev/block/mmcblk0p20 /data noatime,nosuid,nodev,nomblk_io_submit wait,encryptable=footer,check
-    
 on post-fs
     # We restorecon /efs in case the efs partition has been reset.
     restorecon_recursive /efs
@@ -84,7 +63,6 @@ on post-fs
 
     chown system system /productinfo
     chmod 0771 /productinfo
-    insmod /system/lib/modules/mali.ko
 
 on post-fs-data
     # Set indication (checked by vold) that we have finished this action
@@ -104,6 +82,8 @@ on early-boot
     pipe 666 /dev/pipe/mmi.audio.ctrl
     # Support audio parameter stored
     mkdir /data/local/media 0775 media system
+    #
+    mkdir /data/system 0770 system system
 
     chmod 660 /proc/cpt/wdtirq
     chmod 660 /proc/cpt/stop
@@ -154,66 +134,16 @@ on boot
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
     chmod 0660 /sys/devices/virtual/camera/rear/Cam_antibanding
-    chmod media system /sys/devices/virtual/camera/rear/Cam_antibanding
+    chown media system /sys/devices/virtual/camera/rear/Cam_antibanding
 
     chown system system /sys/class/graphics/fb0/dynamic_pclk
     chown system system /sys/class/graphics/fb0/dynamic_fps
     chown system system /sys/class/graphics/fb0/dynamic_mipi_clk
 
-# <Sensors>
-# Accelerometer_sensor
-    chown system radio /dev/accelerometer
-    chown system radio /sys/class/sensors/accelerometer_sensor
-    chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
-    chown system radio /sys/class/sensors/accelerometer_sensor/calibration
-    chown system radio /sys/class/sensors/accelerometer_sensor/accel_cal_open 
-    chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
-    chown system radio /sys/class/sensors/accelerometer_sensor/vendor
-    chown system radio /sys/class/sensors/accelerometer_sensor/name
-
-
-    chmod 777 radio /dev/accelerometer
-    chmod 777 radio /sys/class/sensors/accelerometer_sensor
-    chmod 777 radio /sys/class/sensors/accelerometer_sensor/raw_data
-    chmod 777 radio /sys/class/sensors/accelerometer_sensor/calibration
-    chmod 777 radio /sys/class/sensors/accelerometer_sensor/accel_cal_open
-    chmod 777 radio /sys/class/sensors/accelerometer_sensor/reactive_alert
-    chmod 777 radio /sys/class/sensors/accelerometer_sensor/vendor
-    chmod 777 radio /sys/class/sensors/accelerometer_sensor/name
-
-#audio pin mux
-    chmod 0666 /proc/pin_switch/iis0_sys_sel/cp0_iis0
-    chmod 0666 /proc/pin_switch/iis0_sys_sel/cp1_iis0
-    chmod 0666 /proc/pin_switch/iis0_sys_sel/cp2_iis0
-    chmod 0666 /proc/pin_switch/iis0_sys_sel/ap_iis0
-    chmod 0666 /proc/pin_switch/bt_iis_sys_sel/cp0_iis0
-    chmod 0666 /proc/pin_switch/bt_iis_sys_sel/cp1_iis0
-    chmod 0666 /proc/pin_switch/bt_iis_sys_sel/cp2_iis0
-    chmod 0666 /proc/pin_switch/bt_iis_sys_sel/ap_iis0
-
-on property:ro.modem.t.count=1
-    write /proc/sim/0 t
-
-on property:ro.modem.t.count=2
-    write /proc/sim/0 t
-    write /proc/sim/1 t
-
-on property:ro.modem.t.count=3
-    write /proc/sim/0 t
-    write /proc/sim/1 t
-    write /proc/sim/2 t
-
-on property:ro.modem.w.count=1
-    write /proc/sim/0 w
-
-on property:ro.modem.w.count=2
-    write /proc/sim/0 w
-    write /proc/sim/1 w
-
-on property:ro.modem.w.count=3
-    write /proc/sim/0 w
-    write /proc/sim/1 w
-    write /proc/sim/2 w
+on charger
+    mount ext4 /dev/block/mmcblk0p18 /system ro,barrier=1 wait
+    exec sfsck /dev/block/mmcblk0p20 ext4
+    mount ext4 /dev/block/mmcblk0p20 /data noatime,nosuid,nodev,nomblk_io_submit wait,encryptable=footer,check
 
 on property:ro.config.ksm.support=true
     write /sys/kernel/mm/ksm/pages_to_scan 100
