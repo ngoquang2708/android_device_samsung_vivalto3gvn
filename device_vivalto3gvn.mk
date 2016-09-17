@@ -72,6 +72,7 @@ SYSTEM_INIT_RC_FILES := \
 	device/samsung/vivalto3gvn/system/etc/init/hostapd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/kill_phone.rc \
 	device/samsung/vivalto3gvn/system/etc/init/macloader.rc \
+	device/samsung/vivalto3gvn/system/etc/init/mediacodec.rc \
 	device/samsung/vivalto3gvn/system/etc/init/modemd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/nvitemd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/p2p_supplicant.rc \
