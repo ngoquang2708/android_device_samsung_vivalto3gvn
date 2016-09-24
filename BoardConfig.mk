@@ -108,10 +108,10 @@ BACKLIGHT_PATH := /sys/class/backlight/panel/brightness
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_PAGESIZE := 2048
-#TARGET_KERNEL_CONFIG := cyanogen_vivalto3gvn_defconfig
-#TARGET_KERNEL_SOURCE := kernel/samsung/vivalto3gvn
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
-TARGET_PREBUILT_KERNEL := device/samsung/vivalto3gvn/kernel
+TARGET_KERNEL_CONFIG := cyanogen_vivalto3gvn_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/vivalto3gvn
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G313HZ,SM-G313H,SM-G313ML
