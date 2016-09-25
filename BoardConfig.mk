@@ -119,9 +119,6 @@ TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
 
-# Build system
-USE_NINJA := false
-
 # Memory
 MALLOC_SVELTE := true
 BOARD_USES_LEGACY_MMAP := true
