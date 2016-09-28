@@ -81,7 +81,7 @@ on early-boot
     mkdir /dev/pipe 0755 system system
     pipe 666 /dev/pipe/mmi.audio.ctrl
     # Support audio parameter stored
-    mkdir /data/local/media 0775 media system
+    mkdir /data/local/media 0775 media media
     #
     mkdir /data/system 0770 system system
 
