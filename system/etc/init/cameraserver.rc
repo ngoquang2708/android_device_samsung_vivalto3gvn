@@ -4,5 +4,4 @@ service cameraserver /system/bin/cameraserver
     group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct
     ioprio rt 4
     writepid /dev/cpuset/foreground/tasks
-    #setenv LD_SHIM_LIBS /system/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so:/system/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so
-    setenv LD_PRELOAD /system/lib/libmemoryheapion_sprd.so
+    setenv LD_SHIM_LIBS /system/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so:/system/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so
