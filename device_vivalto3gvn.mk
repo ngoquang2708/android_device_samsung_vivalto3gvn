@@ -188,7 +188,6 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 WIFI_CONFIGS := \
-	device/samsung/vivalto3gvn/configs/wifi/wpa_supplicant.conf \
 	device/samsung/vivalto3gvn/configs/wifi/nvram_net.txt \
 
 PRODUCT_COPY_FILES += \
