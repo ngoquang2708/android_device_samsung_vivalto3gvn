@@ -94,7 +94,6 @@ BOARD_USE_LIBATCHANNEL_WRAPPER := true
 BOARD_CANT_REALLOCATE_OMX_BUFFERS := true
 
 # Board specific features
-BOARD_GLOBAL_CFLAGS += -DUSES_LEGACY_BLOBS
 BOARD_USE_SAMSUNG_COLORFORMAT := true
 
 # Healthd
@@ -125,6 +124,9 @@ BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
 # Memory
 MALLOC_SVELTE := true
 BOARD_USES_LEGACY_MMAP := true
+
+# Bionic
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Enable dex-preoptimization to speed up the first boot sequence
 WITH_DEXPREOPT := true
