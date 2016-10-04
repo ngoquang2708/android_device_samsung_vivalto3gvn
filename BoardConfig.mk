@@ -1,3 +1,4 @@
+#
 # Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,12 +12,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 # Inherit from SPRD common configs
--include device/samsung/sprd-common/BoardConfigCommon.mk
+include device/samsung/sprd-common/BoardConfigCommon.mk
 
 # Inherit from the proprietary version
--include vendor/samsung/vivalto3gvn/BoardConfigVendor.mk
+include vendor/samsung/vivalto3gvn/BoardConfigVendor.mk
 
 # Platform
 TARGET_ARCH := arm
@@ -31,9 +33,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_BOOTLOADER_BOARD_NAME := SC7715T
 BOARD_VENDOR := samsung
 
-# Config u-boot
 TARGET_NO_BOOTLOADER := true
-
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1111490560
@@ -80,7 +80,7 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 USE_SPRD_HWCOMPOSER := true
 USE_SPRD_DITHER := true
 
-# Resolution
+# Bootanimation
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
@@ -89,8 +89,6 @@ BOARD_USE_LIBATCHANNEL_WRAPPER := true
 
 # Media
 BOARD_CANT_REALLOCATE_OMX_BUFFERS := true
-
-# Board specific features
 BOARD_USE_SAMSUNG_COLORFORMAT := true
 
 # Healthd
@@ -125,19 +123,18 @@ BOARD_USES_LEGACY_MMAP := true
 # Bionic
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
-# Enable dex-preoptimization to speed up the first boot sequence
+# Dex-preoptimization
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_PIC := true
+
+# Build system
+WITHOUT_CHECK_API := true
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := device/samsung/vivalto3gvn/rootdir/fstab.scx15
 TARGET_RECOVERY_TWRP := false
-
-# Build system
-WITHOUT_CHECK_API := true
-
 ifeq ($(TARGET_RECOVERY_TWRP),true)
 RECOVERY_VARIANT := twrp
 TARGET_USES_LOGD := true
