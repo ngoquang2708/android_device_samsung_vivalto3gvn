@@ -150,7 +150,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	audio.primary.scx15 \
 	libaudio-resampler \
-	libatchannel_wrapper \
 
 AUDIO_CONFIGS := \
 	device/samsung/vivalto3gvn/configs/audio/audio_policy.conf \
