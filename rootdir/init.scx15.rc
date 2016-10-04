@@ -8,12 +8,6 @@ on early-init
 # coredump file will not be generated in release version
     write /proc/sys/kernel/core_pattern /dev/null
 
-# radio pipe
-    mkdir /dev/rpipe 0550 radio radio
-    pipe 666 /dev/rpipe/ril.vt.0
-    pipe 666 /dev/rpipe/ril.vt.1
-    pipe 666 /dev/rpipe/ril.vt.2
-
 on init
     mkdir /productinfo 0771 system system
 
@@ -79,7 +73,7 @@ on early-boot
 
     # Support audio loopback test
     mkdir /dev/pipe 0755 system system
-    pipe 666 /dev/pipe/mmi.audio.ctrl
+    exec -- mkfifo /dev/pipe/mmi.audio.ctrl
     # Support audio parameter stored
     mkdir /data/local/media 0775 media media
     #
