@@ -55,9 +55,6 @@ BOARD_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/vivalto3gvn/bluetooth
 BOARD_CUSTOM_BT_CONFIG := device/samsung/vivalto3gvn/bluetooth/libbt_vndcfg.txt
 
-# FM
-BOARD_HAVE_FMRADIO_BCM := true
-
 # Wifi
 BOARD_WLAN_DEVICE := bcmdhd
 BOARD_WLAN_DEVICE_REV := bcm4343
