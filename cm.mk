@@ -31,9 +31,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Override build date
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-PRODUCT_PACKAGES += \
-	Browser \
-
 # Device identifier
 PRODUCT_DEVICE := vivalto3gvn
 PRODUCT_NAME := cm_vivalto3gvn
