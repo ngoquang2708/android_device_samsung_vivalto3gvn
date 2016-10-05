@@ -73,7 +73,7 @@ on early-boot
 
     # Support audio loopback test
     mkdir /dev/pipe 0755 system system
-    exec -- mkfifo /dev/pipe/mmi.audio.ctrl
+    exec -- /system/bin/mknod -m 666 /dev/pipe/mmi.audio.ctrl p
     # Support audio parameter stored
     mkdir /data/local/media 0775 media media
     #
