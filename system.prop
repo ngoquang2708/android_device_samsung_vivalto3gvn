@@ -49,3 +49,6 @@ ro.config.swappiness=100
 
 # ADB
 #persist.sys.adb.shell=/system/xbin/bash
+
+# Media
+media.stagefright.legacyencoder=true

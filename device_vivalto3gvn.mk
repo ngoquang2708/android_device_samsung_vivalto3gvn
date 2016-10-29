@@ -63,7 +63,6 @@ PRODUCT_COPY_FILES += \
 # System init .rc files
 SYSTEM_INIT_RC_FILES := \
 	device/samsung/vivalto3gvn/system/etc/init/at_distributor.rc \
-	device/samsung/vivalto3gvn/system/etc/init/cameraserver.rc \
 	device/samsung/vivalto3gvn/system/etc/init/chown_service.rc \
 	device/samsung/vivalto3gvn/system/etc/init/data.rc \
 	device/samsung/vivalto3gvn/system/etc/init/engpc.rc \
@@ -72,6 +71,7 @@ SYSTEM_INIT_RC_FILES := \
 	device/samsung/vivalto3gvn/system/etc/init/kill_phone.rc \
 	device/samsung/vivalto3gvn/system/etc/init/macloader.rc \
 	device/samsung/vivalto3gvn/system/etc/init/mediacodec.rc \
+	device/samsung/vivalto3gvn/system/etc/init/mediaserver.rc \
 	device/samsung/vivalto3gvn/system/etc/init/modemd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/nvitemd.rc \
 	device/samsung/vivalto3gvn/system/etc/init/p2p_supplicant.rc \
