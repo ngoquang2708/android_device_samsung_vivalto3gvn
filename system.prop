@@ -52,3 +52,4 @@ ro.config.swappiness=100
 
 # Media
 media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
