@@ -16,6 +16,10 @@
 
 <MediaCodecs>
     <Decoders>
+        <MediaCodec name="OMX.sprd.soft.mpeg4.decoder" type="video/mp4v-es" />
+        <MediaCodec name="OMX.sprd.soft.h263.decoder" type="video/3gpp" />
+        <MediaCodec name="OMX.sprd.soft.h264.decoder" type="video/avc" />
+
         <MediaCodec name="OMX.sprd.mpeg4.decoder" type="video/mp4v-es">
             <Quirk name="requires-allocate-on-output-ports" />
             <Quirk name="needs-flush-before-disable" />
@@ -43,12 +47,6 @@
         </MediaCodec>
 
         <MediaCodec name="OMX.sprd.aac.decoder" type="audio/mp4a-latm" />
-
-        <!--
-        <MediaCodec name="OMX.sprd.soft.mpeg4.decoder" type="video/mp4v-es" />
-        <MediaCodec name="OMX.sprd.soft.h263.decoder" type="video/3gpp" />
-        <MediaCodec name="OMX.sprd.soft.h264.decoder" type="video/avc" />
-        -->
     </Decoders>
 
     <Encoders>
