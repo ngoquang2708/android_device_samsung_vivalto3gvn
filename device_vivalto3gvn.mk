@@ -205,10 +205,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.locale.language=en \
 	ro.product.locale.region=GB
 
-# Override phone-hdpi-512-dalvik-heap to match value on stock
-PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.heapgrowthlimit=48m
-
 # Enable Google-specific location features, like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.locationfeatures=1 \
@@ -216,15 +212,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ART device props
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.kernel.android.checkjni=0 \
-	dalvik.vm.checkjni=false \
 	dalvik.vm.dex2oat-Xms=8m \
 	dalvik.vm.dex2oat-Xmx=96m \
 	dalvik.vm.dex2oat-flags=--no-watch-dog \
-	dalvik.vm.dex2oat-filter=speed \
-	dalvik.vm.image-dex2oat-Xms=48m \
-	dalvik.vm.image-dex2oat-Xmx=48m \
-	dalvik.vm.image-dex2oat-filter=everything
 
 # Enable insecure ADB for userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
