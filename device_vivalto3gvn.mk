@@ -42,10 +42,6 @@ PRODUCT_AAPT_PREBUILT_DPI := hdpi mdpi ldpi
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
-# Prebuilt kernel
-PRODUCT_COPY_FILES += \
-	device/samsung/vivalto3gvn/kernel:kernel
-
 # Rootdir files
 ROOTDIR_FILES := \
 	device/samsung/vivalto3gvn/rootdir/init.scx15.rc \
