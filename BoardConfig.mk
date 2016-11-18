@@ -121,8 +121,8 @@ BOARD_USES_LEGACY_MMAP := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Dex-preoptimization
-#WITH_DEXPREOPT := true
-#WITH_DEXPREOPT_PIC := true
+WITH_DEXPREOPT := false
+WITH_DEXPREOPT_PIC := true
 
 # Build system
 WITHOUT_CHECK_API := true
