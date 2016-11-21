@@ -186,6 +186,10 @@ WIFI_CONFIGS := \
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(WIFI_CONFIGS),$(f):system/etc/wifi/$(notdir $(f)))
 
+# Telephony
+PRODUCT_COPY_FILES += \
+	device/samsung/vivalto3gvn/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
+
 # Memtrack
 PRODUCT_PACKAGES += \
 	memtrack.scx15 \
