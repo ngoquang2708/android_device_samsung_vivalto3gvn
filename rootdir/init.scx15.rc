@@ -159,3 +159,8 @@ on property:persist.modem.t.enable=1
     symlink /dev/spipe_td6 /dev/vbpipe6
     start nvitemd_td
     start refnotify
+
+service charger /sbin/healthd -c
+    class charger
+    critical
+    seclabel u:r:healthd:s0
