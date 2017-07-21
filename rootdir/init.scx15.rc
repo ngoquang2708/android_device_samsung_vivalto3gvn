@@ -118,6 +118,8 @@ on early-boot
     chown system root /proc/cpwcn/dsp
 
 on boot
+    chmod 0444 /proc/cmdline # TelephonyManager need this
+
     chown system system /sys/module/mali/parameters/gpu_cur_freq
     chown system system /sys/module/mali/parameters/gpufreq_max_limit
     chown system system /sys/module/mali/parameters/gpufreq_min_limit
