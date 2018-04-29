@@ -162,6 +162,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libril_shim \
 	libgps_shim \
+	libstagefright_shim \
 
 # GPS
 GPS_CONFIGS := \
