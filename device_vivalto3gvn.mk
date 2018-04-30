@@ -1,21 +1,4 @@
-#
-# Copyright (C) 2016 The Android Open Source Project
-# Copyright (C) 2016 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-# Inherit from the common Open Source product configuration
+# Inherit from the common product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from sprd-common device configuration
@@ -111,38 +94,38 @@ PRODUCT_COPY_FILES += \
 	$(foreach f,$(MEDIA_CONFIGS),$(f):system/etc/$(notdir $(f)))
 
 # HWC
-PRODUCT_PACKAGES += \
-	gralloc.scx15 \
-	hwcomposer.scx15 \
-	sprd_gsp.scx15 \
-	libion_sprd \
-	libdither \
+#PRODUCT_PACKAGES += \
+#	gralloc.scx15 \
+#	hwcomposer.scx15 \
+#	sprd_gsp.scx15 \
+#	libion_sprd \
+#	libdither \
 
 # Codecs
-PRODUCT_PACKAGES += \
-	libstagefrighthw \
-	libstagefright_sprd_soft_mpeg4dec \
-	libstagefright_sprd_soft_h264dec \
-	libstagefright_sprd_mpeg4dec \
-	libstagefright_sprd_mpeg4enc \
-	libstagefright_sprd_h264dec \
-	libstagefright_sprd_h264enc \
-	libstagefright_sprd_vpxdec \
-	libstagefright_sprd_aacdec \
-	libstagefright_sprd_mp3dec \
+#PRODUCT_PACKAGES += \
+#	libstagefrighthw \
+#	libstagefright_sprd_soft_mpeg4dec \
+#	libstagefright_sprd_soft_h264dec \
+#	libstagefright_sprd_mpeg4dec \
+#	libstagefright_sprd_mpeg4enc \
+#	libstagefright_sprd_h264dec \
+#	libstagefright_sprd_h264enc \
+#	libstagefright_sprd_vpxdec \
+#	libstagefright_sprd_aacdec \
+#	libstagefright_sprd_mp3dec \
 
 # Lights
-PRODUCT_PACKAGES += \
-	lights.scx15
+#PRODUCT_PACKAGES += \
+#	lights.scx15
 
 # Bluetooth
 PRODUCT_PACKAGES += \
 	bluetooth.default \
 
 # Audio
-PRODUCT_PACKAGES += \
-	audio.primary.scx15 \
-	libaudio-resampler \
+#PRODUCT_PACKAGES += \
+#	audio.primary.scx15 \
+#	libaudio-resampler \
 
 AUDIO_CONFIGS := \
 	device/samsung/vivalto3gvn/configs/audio/audio_policy.conf \
@@ -155,14 +138,14 @@ PRODUCT_COPY_FILES += \
 	$(foreach f,$(AUDIO_CONFIGS),$(f):system/etc/$(notdir $(f))) \
 
 # Common libraries
-PRODUCT_PACKAGES += \
-	libmemoryheapion_sprd
+#PRODUCT_PACKAGES += \
+#	libmemoryheapion_sprd
 
 # Shim libraries
-PRODUCT_PACKAGES += \
-	libril_shim \
-	libgps_shim \
-	libstagefright_shim \
+#PRODUCT_PACKAGES += \
+#	libril_shim \
+#	libgps_shim \
+#	libstagefright_shim \
 
 # GPS
 GPS_CONFIGS := \
@@ -192,8 +175,8 @@ PRODUCT_COPY_FILES += \
 	device/samsung/vivalto3gvn/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
 
 # Memtrack
-PRODUCT_PACKAGES += \
-	memtrack.scx15 \
+#PRODUCT_PACKAGES += \
+#	memtrack.scx15 \
 
 # Permissions
 PERMISSION_XML_FILES := \
@@ -220,7 +203,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-flags=--no-watch-dog \
 
 # Enable insecure ADB for userdebug builds
-ADDITIONAL_DEFAULT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
 	ro.secure=0 \
 	ro.adb.secure=0 \
 	ro.debuggable=1 \

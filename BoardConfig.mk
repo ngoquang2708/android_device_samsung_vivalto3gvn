@@ -79,7 +79,7 @@ BOARD_CANT_REALLOCATE_OMX_BUFFERS := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # Healthd
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.scx15
+#BOARD_HAL_STATIC_LIBRARIES := libhealthd.scx15
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -93,6 +93,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_CONFIG := lineageos_vivalto3gvn_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/vivalto3gvn
+BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
 
@@ -100,7 +101,7 @@ KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.
 TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G313HZ,SM-G313H,SM-G313ML
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
+#BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
 
 # Memory
 MALLOC_SVELTE := true
@@ -115,12 +116,15 @@ WITH_DEXPREOPT_PIC := true
 
 # Build system
 WITHOUT_CHECK_API := true
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
+LZMA_RAMDISK_TARGETS := boot,recovery
+TARGET_RECOVERY_DENSITY := mdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := device/samsung/vivalto3gvn/rootdir/fstab.scx15
-TARGET_RECOVERY_TWRP := false
+TARGET_RECOVERY_TWRP := true
 ifeq ($(TARGET_RECOVERY_TWRP),true)
 RECOVERY_VARIANT := twrp
 TARGET_USES_LOGD := true
@@ -130,11 +134,10 @@ TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/sec-thermistor/temperature"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_NO_USB_STORAGE := true
+TW_NO_EXFAT := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_USE_TOOLBOX := true
 TWRP_INCLUDE_LOGCAT := true
-TW_EXCLUDE_SUPERSU := true
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 TW_THEME := portrait_mdpi
 TWHAVE_SELINUX := true
 RECOVERY_SDCARD_ON_DATA := true
