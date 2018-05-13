@@ -1,10 +1,10 @@
-service refnotify /system/bin/refnotify -t 0
+service refnotify /vendor/bin/refnotify -t 0
     class main
     user system
     group system radio shell
     disabled
 
-service refnotify_w /system/bin/refnotify -t 1
+service refnotify_w /vendor/bin/refnotify -t 1
     class main
     user system
     group system radio shell

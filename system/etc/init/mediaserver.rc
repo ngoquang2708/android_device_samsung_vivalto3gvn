@@ -5,4 +5,4 @@ service media /system/bin/mediaserver
     ioprio rt 4
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
     setenv LD_PRELOAD libstagefright_shim.so
-    setenv LD_SHIM_LIBS /system/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so:/system/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so
+    setenv LD_SHIM_LIBS /vendor/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so:/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so

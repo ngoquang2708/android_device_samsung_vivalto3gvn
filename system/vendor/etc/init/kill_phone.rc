@@ -1,11 +1,11 @@
 #kill td app
-service kill_td_phone /system/bin/ext_kill.sh  -t
+service kill_td_phone /vendor/bin/ext_kill.sh  -t
     user root
     disabled
     oneshot
 
 #kill w app
-service kill_w_phone /system/bin/ext_kill.sh  -w
+service kill_w_phone /vendor/bin/ext_kill.sh  -w
     user root
     disabled
     oneshot

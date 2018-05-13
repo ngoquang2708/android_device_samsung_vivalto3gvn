@@ -7,9 +7,9 @@ on boot
     chown system system /sys/class/sec/gps/GPS_PWR_EN/value
     chmod 0664 /sys/class/sec/gps/GPS_PWR_EN/value
 
-service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     class main
     user gps
     group system inet net_raw
     ioprio be 0
-    setenv LD_SHIM_LIBS /system/bin/gpsd|libgps_shim.so
+    setenv LD_SHIM_LIBS /vendor/bin/gpsd|libgps_shim.so

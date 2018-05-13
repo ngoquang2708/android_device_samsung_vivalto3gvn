@@ -49,16 +49,17 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/dhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_STA := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_NVRAM_PATH_PARAM := "/sys/module/dhd/parameters/nvram_path"
-WIFI_DRIVER_NVRAM_PATH := "/system/etc/wifi/nvram_net.txt"
+WIFI_DRIVER_NVRAM_PATH := "/vendor/etc/wifi/nvram_net.txt"
 WIFI_BAND := 802_11_ABG
 
 # Graphics
 #HWUI_COMPILE_FOR_PERF := true
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
+TARGET_USES_GRALLOC1 := true
 BOARD_EGL_NEEDS_HANDLE_VALUE := true
 BOARD_GLOBAL_CFLAGS += -DHAL_PIXEL_FORMAT_YCbCr_420_P=0x13
 BOARD_GLOBAL_CFLAGS += -DHAL_PIXEL_FORMAT_YCbCr_420_SP=0x19
@@ -79,7 +80,7 @@ BOARD_CANT_REALLOCATE_OMX_BUFFERS := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # Healthd
-#BOARD_HAL_STATIC_LIBRARIES := libhealthd.scx15
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.scx15
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true

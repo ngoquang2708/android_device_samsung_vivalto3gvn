@@ -1,11 +1,11 @@
-service phoneserver_t /system/bin/phoneserver -m t
+service phoneserver_t /vendor/bin/phoneserver -m t
     class core
     user root
     group radio system shell
     disabled
     oneshot
 
-service phoneserver_w /system/bin/phoneserver -m w
+service phoneserver_w /vendor/bin/phoneserver -m w
     class core
     user root
     group radio system shell

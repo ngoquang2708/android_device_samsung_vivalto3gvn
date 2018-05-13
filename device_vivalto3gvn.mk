@@ -22,84 +22,138 @@ PRODUCT_AAPT_PREBUILT_DPI := hdpi mdpi ldpi
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
-# Rootdir files
-ROOTDIR_FILES := \
-	device/samsung/vivalto3gvn/rootdir/init.scx15.rc \
-	device/samsung/vivalto3gvn/rootdir/init.scx15.usb.rc \
-	device/samsung/vivalto3gvn/rootdir/init.scx15_ss.rc \
-	device/samsung/vivalto3gvn/rootdir/init.vivalto3gvn.rc \
-	device/samsung/vivalto3gvn/rootdir/init.vivalto3gvn_base.rc \
-	device/samsung/vivalto3gvn/rootdir/init.wifi.rc \
-	device/samsung/vivalto3gvn/rootdir/ueventd.scx15.rc \
-	device/samsung/vivalto3gvn/rootdir/fstab.scx15 \
+LOCAL_PATH := device/samsung/vivalto3gvn
+
+# Root init
+files := \
+	$(LOCAL_PATH)/rootdir/init.scx15.rc \
+	$(LOCAL_PATH)/rootdir/init.scx15.usb.rc \
+	$(LOCAL_PATH)/rootdir/init.scx15_ss.rc \
+	$(LOCAL_PATH)/rootdir/init.vivalto3gvn.rc \
+	$(LOCAL_PATH)/rootdir/init.vivalto3gvn_base.rc \
+	$(LOCAL_PATH)/rootdir/init.wifi.rc \
+	$(LOCAL_PATH)/rootdir/ueventd.scx15.rc \
+	$(LOCAL_PATH)/rootdir/fstab.scx15 \
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(ROOTDIR_FILES),$(f):root/$(notdir $(f)))
+	$(foreach f,$(files),$(f):root/$(notdir $(f)))
 
-# System init .rc files
-SYSTEM_INIT_RC_FILES := \
-	device/samsung/vivalto3gvn/system/etc/init/at_distributor.rc \
-	device/samsung/vivalto3gvn/system/etc/init/chown_service.rc \
-	device/samsung/vivalto3gvn/system/etc/init/data.rc \
-	device/samsung/vivalto3gvn/system/etc/init/engpc.rc \
-	device/samsung/vivalto3gvn/system/etc/init/gpsd.rc \
-	device/samsung/vivalto3gvn/system/etc/init/hostapd.rc \
-	device/samsung/vivalto3gvn/system/etc/init/kill_phone.rc \
-	device/samsung/vivalto3gvn/system/etc/init/macloader.rc \
-	device/samsung/vivalto3gvn/system/etc/init/mediacodec.rc \
-	device/samsung/vivalto3gvn/system/etc/init/mediaserver.rc \
-	device/samsung/vivalto3gvn/system/etc/init/modemd.rc \
-	device/samsung/vivalto3gvn/system/etc/init/nvitemd.rc \
-	device/samsung/vivalto3gvn/system/etc/init/p2p_supplicant.rc \
-	device/samsung/vivalto3gvn/system/etc/init/phoneserver.rc \
-	device/samsung/vivalto3gvn/system/etc/init/refnotify.rc \
-	device/samsung/vivalto3gvn/system/etc/init/rild.rc \
-	device/samsung/vivalto3gvn/system/etc/init/set_mac.rc \
-	device/samsung/vivalto3gvn/system/etc/init/smd_symlink.rc \
-	device/samsung/vivalto3gvn/system/etc/init/swap.rc \
-	device/samsung/vivalto3gvn/system/etc/init/wpa_supplicant.rc \
+# System init
+files := \
+	$(LOCAL_PATH)/system/vendor/etc/init/at_distributor.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/chown_service.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/data.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/engpc.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/gpsd.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/hostapd.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/kill_phone.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/macloader.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/modemd.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/nvitemd.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/p2p_supplicant.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/phoneserver.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/refnotify.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/rild.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/set_mac.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/smd_symlink.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/swap.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/wpa_supplicant.rc \
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(SYSTEM_INIT_RC_FILES),$(f):system/etc/init/$(notdir $(f)))
+	$(foreach f,$(files),$(f):system/vendor/etc/init/$(notdir $(f)))
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/system/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc
 
 # Recovery
 PRODUCT_COPY_FILES += \
-	device/samsung/vivalto3gvn/rootdir/init.recovery.scx15.rc:root/init.recovery.scx15.rc \
-	device/samsung/vivalto3gvn/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
+	$(LOCAL_PATH)/rootdir/init.recovery.scx15.rc:root/init.recovery.scx15.rc \
+	$(LOCAL_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
 
-# Keylayouts
-KEYLAYOUT_FILES := \
-	device/samsung/vivalto3gvn/keylayouts/ist30xx_ts_input.kl \
-	device/samsung/vivalto3gvn/keylayouts/sci-keypad.kl
-
-PRODUCT_COPY_FILES += \
-	$(foreach f,$(KEYLAYOUT_FILES),$(f):system/usr/keylayout/$(notdir $(f)))
-
-# Bluetooth config
-BLUETOOTH_CONFIGS := \
-	device/samsung/vivalto3gvn/configs/bluetooth/bt_vendor.conf
+# Keylayout
+files := \
+	$(LOCAL_PATH)/system/vendor/usr/keylayout/ist30xx_ts_input.kl \
+	$(LOCAL_PATH)/system/vendor/usr/keylayout/sci-keypad.kl
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(BLUETOOTH_CONFIGS),$(f):system/etc/bluetooth/$(notdir $(f)))
+	$(foreach f,$(files),$(f):system/vendor/usr/keylayout/$(notdir $(f)))
 
-# Media config
-MEDIA_CONFIGS := \
-	device/samsung/vivalto3gvn/media/media_codecs.xml \
-	device/samsung/vivalto3gvn/media/media_profiles.xml \
+# Bluetooth
+files := \
+	$(LOCAL_PATH)/system/vendor/etc/bluetooth/bt_vendor.conf
+
+PRODUCT_COPY_FILES += \
+	$(foreach f,$(files),$(f):system/vendor/etc/bluetooth/$(notdir $(f)))
+
+# Media
+files := \
+	$(LOCAL_PATH)/system/vendor/etc/audio_policy.conf \
+	$(LOCAL_PATH)/system/vendor/etc/audio_hw.xml \
+	$(LOCAL_PATH)/system/vendor/etc/audio_para \
+	$(LOCAL_PATH)/system/vendor/etc/codec_pga.xml \
+	$(LOCAL_PATH)/system/vendor/etc/tiny_hw.xml \
+	$(LOCAL_PATH)/system/vendor/etc/media_codecs.xml \
+	$(LOCAL_PATH)/system/vendor/etc/media_profiles.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml \
-	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml
+	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml \
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(MEDIA_CONFIGS),$(f):system/etc/$(notdir $(f)))
+	$(foreach f,$(files),$(f):system/vendor/etc/$(notdir $(f)))
 
-# HWC
-#PRODUCT_PACKAGES += \
-#	gralloc.scx15 \
-#	hwcomposer.scx15 \
-#	sprd_gsp.scx15 \
-#	libion_sprd \
-#	libdither \
+# GPS
+files := \
+	$(LOCAL_PATH)/system/vendor/etc/gps.conf \
+	$(LOCAL_PATH)/system/vendor/etc/gps.xml \
+
+PRODUCT_COPY_FILES += \
+	$(foreach f,$(files),$(f):system/vendor/etc/$(notdir $(f)))
+
+# Nvitem
+files := \
+	$(LOCAL_PATH)/system/vendor/etc/nvitem_td.cfg \
+	$(LOCAL_PATH)/system/vendor/etc/nvitem_w.cfg
+
+PRODUCT_COPY_FILES += \
+	$(foreach f,$(files),$(f):system/vendor/etc/$(notdir $(f)))
+
+# Wifi
+files := \
+	$(LOCAL_PATH)/system/vendor/etc/wifi/nvram_net.txt \
+
+PRODUCT_COPY_FILES += \
+	$(foreach f,$(files),$(f):system/vendor/etc/wifi/$(notdir $(f)))
+
+# Telephony
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/system/vendor/etc/spn-conf.xml:system/vendor/etc/spn-conf.xml
+
+# Permissions
+files := \
+	frameworks/native/data/etc/android.hardware.camera.front.xml \
+	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml \
+
+PRODUCT_COPY_FILES += \
+	$(foreach f,$(files),$(f):system/etc/permissions/$(notdir $(f)))
+
+# HIDL manifest
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
+
+
+# HALs
+PRODUCT_PACKAGES += \
+	audio.primary.scx15 \
+	libaudio-resampler \
+	bluetooth.default \
+	memtrack.scx15 \
+	gralloc.scx15 \
+	hwcomposer.scx15 \
+	sprd_gsp.scx15 \
+	libdither \
+	lights.scx15 \
+	libion_sprd \
+	libmemoryheapion_sprd \
 
 # Codecs
 #PRODUCT_PACKAGES += \
@@ -114,84 +168,19 @@ PRODUCT_COPY_FILES += \
 #	libstagefright_sprd_aacdec \
 #	libstagefright_sprd_mp3dec \
 
-# Lights
-#PRODUCT_PACKAGES += \
-#	lights.scx15
-
-# Bluetooth
+# Shim
 PRODUCT_PACKAGES += \
-	bluetooth.default \
+	libril_shim \
+	libgps_shim \
 
-# Audio
-#PRODUCT_PACKAGES += \
-#	audio.primary.scx15 \
-#	libaudio-resampler \
-
-AUDIO_CONFIGS := \
-	device/samsung/vivalto3gvn/configs/audio/audio_policy.conf \
-	device/samsung/vivalto3gvn/configs/audio/audio_hw.xml \
-	device/samsung/vivalto3gvn/configs/audio/audio_para \
-	device/samsung/vivalto3gvn/configs/audio/codec_pga.xml \
-	device/samsung/vivalto3gvn/configs/audio/tiny_hw.xml \
-
-PRODUCT_COPY_FILES += \
-	$(foreach f,$(AUDIO_CONFIGS),$(f):system/etc/$(notdir $(f))) \
-
-# Common libraries
-#PRODUCT_PACKAGES += \
-#	libmemoryheapion_sprd
-
-# Shim libraries
-#PRODUCT_PACKAGES += \
-#	libril_shim \
-#	libgps_shim \
 #	libstagefright_shim \
-
-# GPS
-GPS_CONFIGS := \
-	device/samsung/vivalto3gvn/configs/gps/gps.conf \
-	device/samsung/vivalto3gvn/configs/gps/gps.xml \
-
-PRODUCT_COPY_FILES += \
-	$(foreach f,$(GPS_CONFIGS),$(f):system/etc/$(notdir $(f)))
-
-# Nvitem
-NVITEM_CONFIGS := \
-	device/samsung/vivalto3gvn/configs/nvitem/nvitem_td.cfg \
-	device/samsung/vivalto3gvn/configs/nvitem/nvitem_w.cfg
-
-PRODUCT_COPY_FILES += \
-	$(foreach f,$(NVITEM_CONFIGS),$(f):system/etc/$(notdir $(f)))
-
-# Wifi
-WIFI_CONFIGS := \
-	device/samsung/vivalto3gvn/configs/wifi/nvram_net.txt \
-
-PRODUCT_COPY_FILES += \
-	$(foreach f,$(WIFI_CONFIGS),$(f):system/etc/wifi/$(notdir $(f)))
-
-# Telephony
-PRODUCT_COPY_FILES += \
-	device/samsung/vivalto3gvn/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
-
-# Memtrack
-#PRODUCT_PACKAGES += \
-#	memtrack.scx15 \
-
-# Permissions
-PERMISSION_XML_FILES := \
-	frameworks/native/data/etc/android.hardware.camera.front.xml \
-	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml \
-
-PRODUCT_COPY_FILES += \
-	$(foreach f,$(PERMISSION_XML_FILES),$(f):system/etc/permissions/$(notdir $(f)))
 
 # Languages
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.locale.language=en \
 	ro.product.locale.region=GB
 
-# Enable Google-specific location features, like NetworkLocationProvider and LocationCollector
+# Google-specific location features
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.locationfeatures=1 \
 	ro.com.google.networklocation=1
