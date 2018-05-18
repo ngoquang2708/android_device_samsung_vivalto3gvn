@@ -119,6 +119,12 @@ WITH_DEXPREOPT_PIC := true
 WITHOUT_CHECK_API := true
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+	/vendor/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so \
+	/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so \
+	/vendor/bin/gpsd|libgps_shim.so \
+
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
 LZMA_RAMDISK_TARGETS := boot,recovery
