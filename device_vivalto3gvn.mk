@@ -157,6 +157,7 @@ PRODUCT_PACKAGES += \
 	lights.scx15 \
 	libion_sprd \
 	libmemoryheapion_sprd \
+	libbt-vendor \
 
 # Codecs
 #PRODUCT_PACKAGES += \
