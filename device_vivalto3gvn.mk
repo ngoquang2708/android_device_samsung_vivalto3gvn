@@ -83,10 +83,10 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 files := \
-	$(LOCAL_PATH)/system/vendor/etc/bluetooth/bt_vendor.conf
+	$(LOCAL_PATH)/system/etc/bluetooth/bt_vendor.conf
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/$(notdir $(f)))
 
 # Media
 files := \
