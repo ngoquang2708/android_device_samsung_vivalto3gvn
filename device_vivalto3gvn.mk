@@ -60,7 +60,7 @@ files := \
 	$(LOCAL_PATH)/system/vendor/etc/init/wpa_supplicant.rc \
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):system/vendor/etc/init/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/$(notdir $(f)))
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/system/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc
@@ -76,14 +76,14 @@ files := \
 	$(LOCAL_PATH)/system/vendor/usr/keylayout/sci-keypad.kl
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):system/vendor/usr/keylayout/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/$(notdir $(f)))
 
 # Bluetooth
 files := \
 	$(LOCAL_PATH)/system/vendor/etc/bluetooth/bt_vendor.conf
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):system/vendor/etc/bluetooth/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/$(notdir $(f)))
 
 # Media
 files := \
@@ -99,7 +99,7 @@ files := \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml \
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):system/vendor/etc/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/$(notdir $(f)))
 
 # GPS
 files := \
@@ -107,7 +107,7 @@ files := \
 	$(LOCAL_PATH)/system/vendor/etc/gps.xml \
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):system/vendor/etc/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/$(notdir $(f)))
 
 # Nvitem
 files := \
@@ -115,18 +115,18 @@ files := \
 	$(LOCAL_PATH)/system/vendor/etc/nvitem_w.cfg
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):system/vendor/etc/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/$(notdir $(f)))
 
 # Wifi
 files := \
 	$(LOCAL_PATH)/system/vendor/etc/wifi/nvram_net.txt \
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):system/vendor/etc/wifi/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/wifi/$(notdir $(f)))
 
 # Telephony
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/system/vendor/etc/spn-conf.xml:system/vendor/etc/spn-conf.xml
+	$(LOCAL_PATH)/system/vendor/etc/spn-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/spn-conf.xml
 
 # Permissions
 files := \
@@ -138,7 +138,7 @@ PRODUCT_COPY_FILES += \
 
 # HIDL manifest
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
+	$(LOCAL_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml \
 
 
 # HALs
