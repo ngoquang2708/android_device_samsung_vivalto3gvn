@@ -178,6 +178,37 @@ PRODUCT_PACKAGES += \
 
 #	libstagefright_shim \
 
+# Treble
+PRODUCT_PACKAGES += \
+	android.hardware.audio@2.0-service \
+	android.hardware.audio@2.0-impl \
+	android.hardware.audio.effect@2.0-impl \
+	android.hardware.bluetooth@1.0-impl \
+	android.hardware.bluetooth@1.0-service \
+	android.hardware.wifi@1.0 \
+	android.hardware.wifi@1.0-impl \
+	android.hardware.wifi@1.0-service \
+	android.hardware.keymaster@3.0-impl \
+	android.hardware.radio@1.0 \
+	android.hardware.radio.deprecated@1.0 \
+	android.hardware.usb@1.0-service \
+	android.hardware.radio@1.0 \
+	android.hardware.radio.deprecated@1.0 \
+	android.hardware.gnss@1.0-impl \
+	android.hardware.power@1.0-impl \
+	android.hardware.light@2.0-impl \
+	android.hardware.vibrator@1.0-impl \
+	android.hardware.sensors@1.0-impl \
+	android.hardware.memtrack@1.0-impl \
+
+#	android.hardware.graphics.allocator@2.0-impl \
+#	android.hardware.graphics.composer@2.1-impl \
+#	android.hardware.graphics.mapper@2.0-impl \
+#	android.hardware.health@1.0-impl \
+#	android.hardware.thermal@1.1-impl \
+#	android.hardware.configstore@1.0-impl \
+#	android.hardware.gatekeeper@1.0-impl \
+
 # Languages
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.locale.language=en \
