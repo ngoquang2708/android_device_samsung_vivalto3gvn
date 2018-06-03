@@ -1,3 +1,5 @@
+import /init.zygote32.rc # XXX REMOVE ME
+
 import /init.scx15.usb.rc
 import /init.scx15_ss.rc
 
