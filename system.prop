@@ -49,6 +49,7 @@ ro.config.swappiness=100
 
 # ADB
 #persist.sys.adb.shell=/system/xbin/bash
+persist.sys.usb.config=mtp,adb
 
 # Media
 media.stagefright.legacyencoder=true
