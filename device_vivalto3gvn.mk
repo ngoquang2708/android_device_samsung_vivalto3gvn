@@ -7,6 +7,9 @@ $(call inherit-product, device/samsung/sprd-common/common.mk)
 # Inherit from vendor
 $(call inherit-product, vendor/samsung/vivalto3gvn/vivalto3gvn-vendor.mk)
 
+# Common Android Go configurations
+$(call inherit-product, build/target/product/go_defaults_512.mk)
+
 # Dalvik heap config
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
