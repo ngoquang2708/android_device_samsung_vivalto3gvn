@@ -2,3 +2,4 @@ service at_distributor /vendor/bin/at_distributor
     class late_start
     user root
     group radio misc log
+    setenv LD_LIBRARY_PATH /vendor/lib:/system/lib # XXX REMOVE ME!
