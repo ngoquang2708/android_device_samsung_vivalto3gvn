@@ -53,3 +53,14 @@ ro.config.swappiness=100
 # Media
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
+
+# PM
+pm.dexopt.first-boot=extract
+pm.dexopt.boot=extract
+#pm.dexopt.first-boot=quicken
+#pm.dexopt.boot=verify
+pm.dexopt.install=quicken
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.ab-ota=speed-profile
+pm.dexopt.inactive=verify
+pm.dexopt.shared=speed
