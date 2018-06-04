@@ -53,7 +53,6 @@ files := \
 	$(LOCAL_PATH)/system/vendor/etc/init/macloader.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/modemd.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/nvitemd.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/p2p_supplicant.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/phoneserver.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/refnotify.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/rild.rc \
