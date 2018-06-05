@@ -175,8 +175,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libril_shim \
 	libgps_shim \
-
-#	libstagefright_shim \
+	libstagefright_shim \
 
 # Treble
 PRODUCT_PACKAGES += \
