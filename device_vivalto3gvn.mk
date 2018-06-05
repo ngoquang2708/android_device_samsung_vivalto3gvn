@@ -185,6 +185,7 @@ PRODUCT_PACKAGES += \
 	android.hardware.audio.effect@2.0-impl \
 	android.hardware.bluetooth@1.0-impl \
 	android.hardware.bluetooth@1.0-service \
+	android.hardware.camera.provider@2.4-impl-legacy \
 	android.hardware.wifi@1.0 \
 	android.hardware.wifi@1.0-impl \
 	android.hardware.wifi@1.0-service \
@@ -208,6 +209,9 @@ PRODUCT_PACKAGES += \
 #	android.hardware.thermal@1.1-impl \
 #	android.hardware.configstore@1.0-impl \
 #	android.hardware.gatekeeper@1.0-impl \
+
+PRODUCT_PACKAGES += \
+	Snap \
 
 # Languages
 PRODUCT_PROPERTY_OVERRIDES += \
