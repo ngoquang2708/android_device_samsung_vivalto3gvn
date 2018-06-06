@@ -120,9 +120,9 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-	/vendor/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so \
-	/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so \
-	/vendor/bin/gpsd|libgps_shim.so \
+	/system/vendor/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so \
+	/system/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so \
+	/system/vendor/bin/gpsd|libgps_shim.so \
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
