@@ -163,6 +163,7 @@ PRODUCT_PACKAGES += \
 	libion_sprd \
 	libmemoryheapion_sprd \
 	libbt-vendor \
+	sensors.scx15 \
 
 # Codecs
 PRODUCT_PACKAGES += \
