@@ -81,7 +81,8 @@ PRODUCT_COPY_FILES += \
 # Keylayout
 files := \
 	$(LOCAL_PATH)/system/vendor/usr/keylayout/ist30xx_ts_input.kl \
-	$(LOCAL_PATH)/system/vendor/usr/keylayout/sci-keypad.kl
+	$(LOCAL_PATH)/system/vendor/usr/keylayout/sci-keypad.kl \
+	$(LOCAL_PATH)/system/vendor/usr/keylayout/headset-keyboard.kl \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/$(notdir $(f)))
