@@ -35,7 +35,10 @@ on post-fs-data
     chmod 0660 /efs/wifi/.mac.info
 
 on boot
+    chown wifi wifi /sys/module/dhd/parameters/firmware_path
+    chown wifi wifi /sys/module/dhd/parameters/nvram_path
     setprop wifi.interface wlan0
+    setprop wifi.ap.interface wlan0
 
 on property:init.svc.macloader=stopped
     chown system root /data/.cid.info

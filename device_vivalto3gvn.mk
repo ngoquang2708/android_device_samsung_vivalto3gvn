@@ -41,7 +41,7 @@ files := \
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):root/$(notdir $(f)))
 
-# System init
+# Vendor init
 files := \
 	$(LOCAL_PATH)/system/vendor/etc/init/at_distributor.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/chown_service.rc \
@@ -60,12 +60,18 @@ files := \
 	$(LOCAL_PATH)/system/vendor/etc/init/smd_symlink.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/swap.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/wpa_supplicant.rc \
+	$(LOCAL_PATH)/system/vendor/etc/init/android.hardware.wifi@1.0-service.rc \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/$(notdir $(f)))
 
+# System init
+
+files := \
+	$(LOCAL_PATH)/system/etc/init/mediaserver.rc \
+
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/system/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $(f)))
 
 # Recovery
 PRODUCT_COPY_FILES += \
@@ -185,8 +191,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.bluetooth@1.0-impl \
 	android.hardware.bluetooth@1.0-service \
 	android.hardware.camera.provider@2.4-impl-legacy \
-	android.hardware.wifi@1.0 \
-	android.hardware.wifi@1.0-impl \
 	android.hardware.wifi@1.0-service \
 	android.hardware.keymaster@3.0-impl \
 	android.hardware.radio@1.0 \
