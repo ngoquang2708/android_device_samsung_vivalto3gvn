@@ -1,24 +1,10 @@
-#
-# Copyright (C) 2014 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
 # Inherit from SPRD common configs
 include device/samsung/sprd-common/BoardConfigCommon.mk
 
 # Inherit from the proprietary version
 include vendor/samsung/vivalto3gvn/BoardConfigVendor.mk
+
+LOCAL_PATH := device/samsung/vivalto3gvn
 
 # Platform
 TARGET_ARCH := arm
@@ -45,16 +31,14 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-BOARD_GLOBAL_CFLAGS += -DSPRD_HARDWARE
-
 # RIL
 BOARD_RIL_CLASS += ../../../device/samsung/vivalto3gvn/ril
 BOARD_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 # Bluetooth
 USE_BLUETOOTH_BCM4343 := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/vivalto3gvn/bluetooth
-BOARD_CUSTOM_BT_CONFIG := device/samsung/vivalto3gvn/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
 
 # Wifi
 BOARD_WLAN_DEVICE := bcmdhd
@@ -65,9 +49,9 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/dhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_STA := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_NVRAM_PATH_PARAM := "/sys/module/dhd/parameters/nvram_path"
 WIFI_DRIVER_NVRAM_PATH := "/system/etc/wifi/nvram_net.txt"
 WIFI_BAND := 802_11_ABG
@@ -76,11 +60,6 @@ WIFI_BAND := 802_11_ABG
 #HWUI_COMPILE_FOR_PERF := true
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 BOARD_EGL_NEEDS_HANDLE_VALUE := true
-BOARD_GLOBAL_CFLAGS += -DHAL_PIXEL_FORMAT_YCbCr_420_P=0x13
-BOARD_GLOBAL_CFLAGS += -DHAL_PIXEL_FORMAT_YCbCr_420_SP=0x19
-BOARD_GLOBAL_CFLAGS += -DGRALLOC_USAGE_OVERLAY_BUFFER=0x01000000
-BOARD_GLOBAL_CFLAGS += -DGRALLOC_USAGE_VIDEO_BUFFER=0x02000000
-BOARD_GLOBAL_CFLAGS += -DGRALLOC_USAGE_CAMERA_BUFFER=0x04000000
 
 # HWComposer
 USE_SPRD_HWCOMPOSER := true
@@ -116,7 +95,7 @@ KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.
 TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G313HZ,SM-G313H,SM-G313ML
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/vivalto3gvn/sepolicy
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
 # Memory
 MALLOC_SVELTE := true
@@ -126,7 +105,7 @@ BOARD_USES_LEGACY_MMAP := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Dex-preoptimization
-WITH_DEXPREOPT := false
+#WITH_DEXPREOPT := true
 WITH_DEXPREOPT_PIC := true
 
 # Build system
@@ -134,9 +113,11 @@ WITHOUT_CHECK_API := true
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
+LZMA_RAMDISK_TARGETS := boot,recovery
+TARGET_RECOVERY_DENSITY := mdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB := device/samsung/vivalto3gvn/rootdir/fstab.scx15
-TARGET_RECOVERY_TWRP := false
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.scx15
+TARGET_RECOVERY_TWRP := true
 ifeq ($(TARGET_RECOVERY_TWRP),true)
 RECOVERY_VARIANT := twrp
 TARGET_USES_LOGD := true
@@ -146,11 +127,10 @@ TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/sec-thermistor/temperature"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_NO_USB_STORAGE := true
+TW_NO_EXFAT := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_USE_TOOLBOX := true
 TWRP_INCLUDE_LOGCAT := true
-TW_EXCLUDE_SUPERSU := true
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 TW_THEME := portrait_mdpi
 TWHAVE_SELINUX := true
 RECOVERY_SDCARD_ON_DATA := true
