@@ -4,7 +4,7 @@ include device/samsung/sprd-common/BoardConfigCommon.mk
 # Inherit from the proprietary version
 include vendor/samsung/vivalto3gvn/BoardConfigVendor.mk
 
-LOCAL_PATH := device/samsung/vivalto3gvn
+DEVICE_PATH := device/samsung/vivalto3gvn
 
 # Platform
 TARGET_ARCH := arm
@@ -32,8 +32,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay-lineage
 
 # RIL
 BOARD_RIL_CLASS += ../../../device/samsung/vivalto3gvn/ril
@@ -41,8 +41,8 @@ TARGET_DISABLE_ASHMEM_TRACKING := true
 
 # Bluetooth
 USE_BLUETOOTH_BCM4343 := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
-BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/libbt_vndcfg.txt
 
 # Wifi
 BOARD_WLAN_DEVICE := bcmdhd
@@ -101,7 +101,7 @@ KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.
 TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G313HZ,SM-G313H,SM-G313ML
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Memory
 MALLOC_SVELTE := true
@@ -129,7 +129,7 @@ BOARD_HAS_DOWNLOAD_MODE := true
 LZMA_RAMDISK_TARGETS := boot,recovery
 TARGET_RECOVERY_DENSITY := mdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.scx15
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.scx15
 TARGET_RECOVERY_TWRP := true
 ifeq ($(TARGET_RECOVERY_TWRP),true)
 RECOVERY_VARIANT := twrp

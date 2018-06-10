@@ -25,41 +25,41 @@ PRODUCT_AAPT_PREBUILT_DPI := hdpi mdpi ldpi
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
-LOCAL_PATH := device/samsung/vivalto3gvn
+DEVICE_PATH := device/samsung/vivalto3gvn
 
 # Root init
 files := \
-	$(LOCAL_PATH)/rootdir/init.scx15.rc \
-	$(LOCAL_PATH)/rootdir/init.scx15.usb.rc \
-	$(LOCAL_PATH)/rootdir/init.scx15_ss.rc \
-	$(LOCAL_PATH)/rootdir/init.vivalto3gvn.rc \
-	$(LOCAL_PATH)/rootdir/init.vivalto3gvn_base.rc \
-	$(LOCAL_PATH)/rootdir/init.wifi.rc \
-	$(LOCAL_PATH)/rootdir/ueventd.scx15.rc \
-	$(LOCAL_PATH)/rootdir/fstab.scx15 \
+	$(DEVICE_PATH)/rootdir/init.scx15.rc \
+	$(DEVICE_PATH)/rootdir/init.scx15.usb.rc \
+	$(DEVICE_PATH)/rootdir/init.scx15_ss.rc \
+	$(DEVICE_PATH)/rootdir/init.vivalto3gvn.rc \
+	$(DEVICE_PATH)/rootdir/init.vivalto3gvn_base.rc \
+	$(DEVICE_PATH)/rootdir/init.wifi.rc \
+	$(DEVICE_PATH)/rootdir/ueventd.scx15.rc \
+	$(DEVICE_PATH)/rootdir/fstab.scx15 \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):root/$(notdir $(f)))
 
 # Vendor init
 files := \
-	$(LOCAL_PATH)/system/vendor/etc/init/at_distributor.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/chown_service.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/data.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/engpc.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/gpsd.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/hostapd.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/kill_phone.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/macloader.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/modemd.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/nvitemd.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/phoneserver.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/refnotify.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/rild.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/set_mac.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/smd_symlink.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/swap.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/wpa_supplicant.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/at_distributor.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/chown_service.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/data.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/engpc.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/gpsd.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/hostapd.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/kill_phone.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/macloader.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/modemd.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/nvitemd.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/phoneserver.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/refnotify.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/rild.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/set_mac.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/smd_symlink.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/swap.rc \
+	$(DEVICE_PATH)/system/vendor/etc/init/wpa_supplicant.rc \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/$(notdir $(f)))
@@ -67,41 +67,41 @@ PRODUCT_COPY_FILES += \
 # System init
 
 files := \
-	$(LOCAL_PATH)/system/etc/init/mediaserver.rc \
+	$(DEVICE_PATH)/system/etc/init/mediaserver.rc \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $(f)))
 
 # Recovery
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/rootdir/init.recovery.scx15.rc:root/init.recovery.scx15.rc \
-	$(LOCAL_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
+	$(DEVICE_PATH)/rootdir/init.recovery.scx15.rc:root/init.recovery.scx15.rc \
+	$(DEVICE_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
 
 # Keylayout
 files := \
-	$(LOCAL_PATH)/system/vendor/usr/keylayout/ist30xx_ts_input.kl \
-	$(LOCAL_PATH)/system/vendor/usr/keylayout/sci-keypad.kl \
-	$(LOCAL_PATH)/system/vendor/usr/keylayout/headset-keyboard.kl \
+	$(DEVICE_PATH)/system/vendor/usr/keylayout/ist30xx_ts_input.kl \
+	$(DEVICE_PATH)/system/vendor/usr/keylayout/sci-keypad.kl \
+	$(DEVICE_PATH)/system/vendor/usr/keylayout/headset-keyboard.kl \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/$(notdir $(f)))
 
 # Bluetooth
 files := \
-	$(LOCAL_PATH)/system/etc/bluetooth/bt_vendor.conf
+	$(DEVICE_PATH)/system/etc/bluetooth/bt_vendor.conf
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/$(notdir $(f)))
 
 # Media
 files := \
-	$(LOCAL_PATH)/system/vendor/etc/audio_policy.conf \
-	$(LOCAL_PATH)/system/vendor/etc/audio_hw.xml \
-	$(LOCAL_PATH)/system/vendor/etc/audio_para \
-	$(LOCAL_PATH)/system/vendor/etc/codec_pga.xml \
-	$(LOCAL_PATH)/system/vendor/etc/tiny_hw.xml \
-	$(LOCAL_PATH)/system/vendor/etc/media_codecs.xml \
-	$(LOCAL_PATH)/system/vendor/etc/media_profiles.xml \
+	$(DEVICE_PATH)/system/vendor/etc/audio_policy.conf \
+	$(DEVICE_PATH)/system/vendor/etc/audio_hw.xml \
+	$(DEVICE_PATH)/system/vendor/etc/audio_para \
+	$(DEVICE_PATH)/system/vendor/etc/codec_pga.xml \
+	$(DEVICE_PATH)/system/vendor/etc/tiny_hw.xml \
+	$(DEVICE_PATH)/system/vendor/etc/media_codecs.xml \
+	$(DEVICE_PATH)/system/vendor/etc/media_profiles.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml \
@@ -111,30 +111,30 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 files := \
-	$(LOCAL_PATH)/system/vendor/etc/gps.conf \
-	$(LOCAL_PATH)/system/vendor/etc/gps.xml \
+	$(DEVICE_PATH)/system/vendor/etc/gps.conf \
+	$(DEVICE_PATH)/system/vendor/etc/gps.xml \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/$(notdir $(f)))
 
 # Nvitem
 files := \
-	$(LOCAL_PATH)/system/vendor/etc/nvitem_td.cfg \
-	$(LOCAL_PATH)/system/vendor/etc/nvitem_w.cfg
+	$(DEVICE_PATH)/system/vendor/etc/nvitem_td.cfg \
+	$(DEVICE_PATH)/system/vendor/etc/nvitem_w.cfg
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/$(notdir $(f)))
 
 # Wifi
 files := \
-	$(LOCAL_PATH)/system/vendor/etc/wifi/nvram_net.txt \
+	$(DEVICE_PATH)/system/vendor/etc/wifi/nvram_net.txt \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/wifi/$(notdir $(f)))
 
 # Telephony
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/system/vendor/etc/spn-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/spn-conf.xml
+	$(DEVICE_PATH)/system/vendor/etc/spn-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/spn-conf.xml
 
 # Permissions
 files := \
@@ -146,7 +146,7 @@ PRODUCT_COPY_FILES += \
 
 # HIDL manifest
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml \
+	$(DEVICE_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml \
 
 
 # HALs
