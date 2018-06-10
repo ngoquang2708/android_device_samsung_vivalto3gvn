@@ -142,7 +142,7 @@ files := \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml \
 
 PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):system/etc/permissions/$(notdir $(f)))
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/$(notdir $(f)))
 
 # HIDL manifest
 PRODUCT_COPY_FILES += \
