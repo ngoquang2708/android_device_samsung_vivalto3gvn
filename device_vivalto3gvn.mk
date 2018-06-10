@@ -60,7 +60,6 @@ files := \
 	$(LOCAL_PATH)/system/vendor/etc/init/smd_symlink.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/swap.rc \
 	$(LOCAL_PATH)/system/vendor/etc/init/wpa_supplicant.rc \
-	$(LOCAL_PATH)/system/vendor/etc/init/android.hardware.wifi@1.0-service.rc \
 
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/$(notdir $(f)))
