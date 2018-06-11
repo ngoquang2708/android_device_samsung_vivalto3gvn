@@ -109,14 +109,6 @@ files := \
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/$(notdir $(f)))
 
-# Nvitem
-files := \
-	$(DEVICE_PATH)/system/etc/nvitem_td.cfg \
-	$(DEVICE_PATH)/system/etc/nvitem_w.cfg
-
-PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/$(notdir $(f)))
-
 # Wifi
 files := \
 	$(DEVICE_PATH)/system/etc/wifi/nvram_net.txt \
@@ -151,6 +143,10 @@ PRODUCT_PACKAGES += \
 	libmemoryheapion_sprd \
 	libbt-vendor \
 	sensors.scx15 \
+
+# RIL
+PRODUCT_PACKAGES += \
+	nvitemd \
 
 # Codecs
 PRODUCT_PACKAGES += \
