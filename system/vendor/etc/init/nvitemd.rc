@@ -1,11 +1,11 @@
-service nvitemd_td /vendor/bin/nvitemd /dev/spipe_td1 /vendor/etc/nvitem_td.cfg FALSE
+service nvitemd_td /vendor/bin/nvitemd td 0
     class core
     user system
     group system radio shell
     disabled
     oneshot
 
-service nvitemd_w /vendor/bin/nvitemd /dev/spipe_w1 /vendor/etc/nvitem_w.cfg FALSE
+service nvitemd_w /vendor/bin/nvitemd w 0
     class core
     user system
     group system radio shell
