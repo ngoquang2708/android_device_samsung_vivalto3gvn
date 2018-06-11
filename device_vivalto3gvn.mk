@@ -160,6 +160,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
 	nvitemd \
+	refnotify \
 
 # Codecs
 PRODUCT_PACKAGES += \
