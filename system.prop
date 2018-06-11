@@ -16,6 +16,7 @@ drm.service.enabled=1
 persist.sys.strictmode.disable=1
 
 # RIL
+ro.product.partitionpath=/dev/block/platform/sprd-sdhci.3/by-name/
 persist.modem.w.enable=1
 ro.modem.w.dev=/dev/cpw
 ro.modem.w.tty=/dev/stty_w
