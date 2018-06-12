@@ -1,5 +1,5 @@
 # WCDMA rild services
-service ril-daemon /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 0
+service wril-daemon /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 0
     class main
     socket rild stream 660 root radio
     socket sap_uim_socket stream 660 bluetooth bluetooth
@@ -9,7 +9,7 @@ service ril-daemon /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -
     group radio cache inet misc audio log readproc wakelock shell
     setenv LD_PRELOAD /vendor/lib/libril_shim.so
 
-service ril-daemon2 /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 1
+service wril-daemon1 /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 1
     class main
     socket rild1 stream 660 root radio
     socket sap_uim_socket1 stream 660 bluetooth bluetooth
@@ -19,7 +19,7 @@ service ril-daemon2 /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w 
     group radio cache inet misc audio log readproc wakelock shell
     setenv LD_PRELOAD /vendor/lib/libril_shim.so
 
-service ril-daemon3 /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 2
+service wril-daemon2 /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 2
     class main
     socket rild2 stream 660 root radio
     socket sap_uim_socket2 stream 660 bluetooth bluetooth
