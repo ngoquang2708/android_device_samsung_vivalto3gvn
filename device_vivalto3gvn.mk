@@ -146,6 +146,7 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+	modemd \
 	nvitemd \
 	refnotify \
 
