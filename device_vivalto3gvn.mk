@@ -144,7 +144,8 @@ PRODUCT_PACKAGES += \
 	libion_sprd \
 	libmemoryheapion_sprd \
 	libbt-vendor \
-	sensors.scx15 \
+
+#	sensors.scx15 \
 
 # RIL
 PRODUCT_PACKAGES += \
