@@ -120,7 +120,6 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Dex-preoptimization
 WITH_DEXPREOPT := true
-WITH_DEXPREOPT_PIC := true
 WITH_DEXPREOPT_BOOT_IMG_ONLY := true
 
 # Build system
