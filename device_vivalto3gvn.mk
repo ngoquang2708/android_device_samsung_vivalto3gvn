@@ -132,6 +132,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	audio.primary.scx15 \
 	libaudio-resampler \
+	camera.scx15 \
+	camera2.scx15 \
 	bluetooth.default \
 	memtrack.scx15 \
 	gralloc.scx15 \
