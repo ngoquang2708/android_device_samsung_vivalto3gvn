@@ -162,6 +162,7 @@ PRODUCT_PACKAGES += \
 	modemd \
 	nvitemd \
 	refnotify \
+	rild \
 
 # Codecs
 PRODUCT_PACKAGES += \

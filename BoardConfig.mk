@@ -38,6 +38,8 @@ DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay-lineage
 # RIL
 BOARD_RIL_CLASS += ../../../device/samsung/vivalto3gvn/ril
 TARGET_DISABLE_ASHMEM_TRACKING := true
+BOARD_PROVIDES_LIBRIL := true
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Bluetooth
 USE_BLUETOOTH_BCM4343 := true
@@ -123,6 +125,7 @@ TARGET_LD_SHIM_LIBS := \
 	/system/vendor/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so \
 	/system/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so \
 	/system/vendor/bin/gpsd|libgps_shim.so \
+	/system/vendor/lib/libreference-ril_sp.so|libril_shim.so \
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true

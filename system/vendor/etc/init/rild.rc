@@ -1,30 +1,21 @@
 # WCDMA rild services
-service wril-daemon /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 0
+service wril-daemon /vendor/bin/hw/rild -l /vendor/lib/libreference-ril_sp.so -- -m w -n 0
     class main
-    socket rild stream 660 root radio
-    socket sap_uim_socket stream 660 bluetooth bluetooth
-    socket rild-debug stream 660 radio system
     disabled
     user root
     group radio cache inet misc audio log readproc wakelock shell
-    setenv LD_PRELOAD /vendor/lib/libril_shim.so
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service wril-daemon1 /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 1
+service wril-daemon1 /vendor/bin/hw/rild -l /vendor/lib/libreference-ril_sp.so -c 2 -- -m w -n 1
     class main
-    socket rild1 stream 660 root radio
-    socket sap_uim_socket1 stream 660 bluetooth bluetooth
-    socket rild-debug1 stream 660 radio system
     disabled
     user root
     group radio cache inet misc audio log readproc wakelock shell
-    setenv LD_PRELOAD /vendor/lib/libril_shim.so
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service wril-daemon2 /vendor/bin/rild -l /vendor/lib/libreference-ril_sp.so -m w -n 2
+service wril-daemon2 /vendor/bin/hw/rild -l /vendor/lib/libreference-ril_sp.so -c 3 -- -m w -n 2
     class main
-    socket rild2 stream 660 root radio
-    socket sap_uim_socket2 stream 660 bluetooth bluetooth
-    socket rild-debug2 stream 660 radio system
     disabled
     user root
     group radio cache inet misc audio log readproc wakelock shell
-    setenv LD_PRELOAD /vendor/lib/libril_shim.so
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
