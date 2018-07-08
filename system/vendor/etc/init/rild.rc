@@ -1,19 +1,19 @@
 # WCDMA rild services
-service wril-daemon /vendor/bin/hw/rild -l /vendor/lib/libreference-ril_sp.so -- -m w -n 0
+service wril-daemon /vendor/bin/hw/rild -c 0 -- -m w -n 0
     class main
     disabled
     user root
     group radio cache inet misc audio log readproc wakelock shell
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service wril-daemon1 /vendor/bin/hw/rild -l /vendor/lib/libreference-ril_sp.so -c 2 -- -m w -n 1
+service wril-daemon1 /vendor/bin/hw/rild -c 2 -- -m w -n 1
     class main
     disabled
     user root
     group radio cache inet misc audio log readproc wakelock shell
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service wril-daemon2 /vendor/bin/hw/rild -l /vendor/lib/libreference-ril_sp.so -c 3 -- -m w -n 2
+service wril-daemon2 /vendor/bin/hw/rild -c 3 -- -m w -n 2
     class main
     disabled
     user root
