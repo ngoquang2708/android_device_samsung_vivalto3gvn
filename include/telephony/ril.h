@@ -606,6 +606,15 @@ typedef struct {
                        (as expected by TS 27.005) or NULL for default SMSC */
 } RIL_SMS_WriteArgs;
 
+/** Samsung stuff. sizeof(CallDetails) = 20 */
+typedef struct {
+    int call_type;
+    int call_domain;
+    char* getCsvFromExtras;
+    int padding1;
+    int padding2;
+} RIL_CallDetails;
+
 /** Used by RIL_REQUEST_DIAL */
 typedef struct {
     char * address;
@@ -616,6 +625,8 @@ typedef struct {
              * clir == 2 on "CLIR suppression" (allow CLI presentation)
              */
     RIL_UUS_Info *  uusInfo;    /* NULL or Pointer to User-User Signaling Information */
+
+    RIL_CallDetails *callDetails;
 } RIL_Dial;
 
 typedef struct {
