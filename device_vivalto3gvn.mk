@@ -101,7 +101,7 @@ files := \
 	$(DEVICE_PATH)/system/vendor/etc/codec_pga.xml \
 	$(DEVICE_PATH)/system/vendor/etc/tiny_hw.xml \
 	$(DEVICE_PATH)/system/vendor/etc/media_codecs.xml \
-	$(DEVICE_PATH)/system/vendor/etc/media_profiles.xml \
+	$(DEVICE_PATH)/system/vendor/etc/media_profiles_V1_0.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml \
