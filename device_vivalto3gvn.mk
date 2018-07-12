@@ -184,6 +184,7 @@ PRODUCT_PACKAGES += \
 
 # Shim
 PRODUCT_PACKAGES += \
+	libsecril-shim \
 	libril_shim \
 	libgps_shim \
 	libstagefright_shim \
