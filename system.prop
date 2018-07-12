@@ -57,6 +57,7 @@ persist.sys.usb.config=mtp,adb
 # Media
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
+persist.media.treble_omx=false
 
 # PM
 pm.dexopt.first-boot=extract
