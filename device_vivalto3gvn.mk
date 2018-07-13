@@ -168,6 +168,7 @@ PRODUCT_PACKAGES += \
 	nvitemd \
 	refnotify \
 	rild \
+	libsecril-client \
 
 # Codecs
 PRODUCT_PACKAGES += \
