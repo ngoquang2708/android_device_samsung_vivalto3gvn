@@ -169,6 +169,7 @@ PRODUCT_PACKAGES += \
 	refnotify \
 	rild \
 	libsecril-client \
+	libatchannel \
 
 # Codecs
 PRODUCT_PACKAGES += \
