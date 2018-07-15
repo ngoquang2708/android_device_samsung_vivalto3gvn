@@ -236,3 +236,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-Xms=8m \
 	dalvik.vm.dex2oat-Xmx=96m \
 	dalvik.vm.dex2oat-flags=--no-watch-dog \
+
+# Enable insecure ADB for userdebug builds
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.secure=0 \
+	ro.adb.secure=0 \
+	ro.debuggable=1 \
+	persist.sys.root_access=1 \
+	persist.service.adb.enable=1
