@@ -49,7 +49,7 @@ ro.config.zram.disksize=128M
 
 # ADB
 #persist.sys.adb.shell=/system/xbin/bash
-persist.sys.usb.config=mtp,adb
+#persist.sys.usb.config=mtp,adb
 
 # Media
 media.stagefright.legacyencoder=true
