@@ -48,7 +48,6 @@ files := \
 	$(DEVICE_PATH)/system/vendor/etc/init/data.rc \
 	$(DEVICE_PATH)/system/vendor/etc/init/engpc.rc \
 	$(DEVICE_PATH)/system/vendor/etc/init/gpsd.rc \
-	$(DEVICE_PATH)/system/vendor/etc/init/hostapd.rc \
 	$(DEVICE_PATH)/system/vendor/etc/init/kill_phone.rc \
 	$(DEVICE_PATH)/system/vendor/etc/init/macloader.rc \
 	$(DEVICE_PATH)/system/vendor/etc/init/modemd.rc \
