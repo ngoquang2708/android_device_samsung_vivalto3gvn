@@ -4,6 +4,7 @@ service phoneserver_t /vendor/bin/phoneserver -m t
     group radio system shell
     disabled
     oneshot
+    setenv LD_PRELOAD /vendor/lib/libphoneserver_shim.so
 
 service phoneserver_w /vendor/bin/phoneserver -m w
     class core
@@ -11,3 +12,4 @@ service phoneserver_w /vendor/bin/phoneserver -m w
     group radio system shell
     disabled
     oneshot
+    setenv LD_PRELOAD /vendor/lib/libphoneserver_shim.so

@@ -189,6 +189,7 @@ PRODUCT_PACKAGES += \
 	libril_shim \
 	libgps_shim \
 	libstagefright_shim \
+	libphoneserver_shim \
 
 # Treble
 PRODUCT_PACKAGES += \
