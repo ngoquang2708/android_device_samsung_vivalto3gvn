@@ -162,7 +162,7 @@ on property:persist.modem.t.enable=1
     start nvitemd_td
     start refnotify
 
-service charger /sbin/healthd -c
+service charger /charger
     class charger
     critical
     seclabel u:r:healthd:s0
