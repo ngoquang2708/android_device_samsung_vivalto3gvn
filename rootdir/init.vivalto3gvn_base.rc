@@ -161,7 +161,7 @@ on boot
     chmod 0770 /data/misc/bluetooth
     chown bluetooth bluetooth /data/misc/bluetoothd
     chown bluetooth bluetooth /data/misc/bluetooth
-    chown root bluetooth /dev/ttyS0
+    chown bluetooth bluetooth /dev/ttyS0
     chmod 0770 /dev/ttyS0
     chmod 0770 /dev/ttyS1
     chmod 0660 /sys/class/rfkill/rfkill0/state
