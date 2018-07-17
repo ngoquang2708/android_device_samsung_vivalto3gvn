@@ -124,7 +124,6 @@ TARGET_LD_SHIM_LIBS := \
 	/system/vendor/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so \
 	/system/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so \
 	/system/vendor/bin/gpsd|libgps_shim.so \
-	/system/vendor/lib/libreference-ril_sp.so|libril_shim.so \
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
