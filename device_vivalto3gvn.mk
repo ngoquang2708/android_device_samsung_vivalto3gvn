@@ -113,8 +113,12 @@ PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/$(notdir $(f)))
 
 # Seccomp
+files := \
+	$(DEVICE_PATH)/system/vendor/etc/seccomp_policy/mediacodec.policy \
+	$(DEVICE_PATH)/system/vendor/etc/seccomp_policy/mediaextractor.policy \
+
 PRODUCT_COPY_FILES += \
-	$(DEVICE_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
+	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/$(notdir $(f)))
 
 # GPS
 files := \
