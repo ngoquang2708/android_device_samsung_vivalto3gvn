@@ -127,6 +127,10 @@ TARGET_LD_SHIM_LIBS := \
 	/system/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so \
 	/system/vendor/bin/gpsd|libgps_shim.so \
 
+# Treble
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+#DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
 LZMA_RAMDISK_TARGETS := boot,recovery

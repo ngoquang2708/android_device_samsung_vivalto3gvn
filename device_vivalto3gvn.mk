@@ -143,11 +143,6 @@ files := \
 PRODUCT_COPY_FILES += \
 	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/$(notdir $(f)))
 
-# HIDL manifest
-PRODUCT_COPY_FILES += \
-	$(DEVICE_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml \
-
-
 # HALs
 PRODUCT_PACKAGES += \
 	audio.primary.scx15 \
