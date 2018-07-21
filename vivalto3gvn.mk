@@ -193,28 +193,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	Snap \
 
-# Languages
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.product.locale.language=en \
-	ro.product.locale.region=GB
-
-# Google-specific location features
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.com.google.locationfeatures=1 \
-	ro.com.google.networklocation=1
-
-# ART device props
-PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.dex2oat-Xms=8m \
-	dalvik.vm.dex2oat-Xmx=96m \
-	dalvik.vm.dex2oat-flags=--no-watch-dog \
-
-# Enable insecure ADB for userdebug builds
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.secure=0 \
-	ro.adb.secure=0 \
-	ro.debuggable=1 \
-	persist.sys.root_access=1 \
-	persist.service.adb.enable=1
-
+$(call inherit-product, $(DEVICE_PATH)/prop.mk)
 $(call inherit-product, $(DEVICE_PATH)/treble.mk)
