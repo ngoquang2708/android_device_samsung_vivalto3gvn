@@ -5,7 +5,7 @@ $(call inherit-product, vendor/lineage/config/telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/vivalto3gvn/device_vivalto3gvn.mk)
+$(call inherit-product, device/samsung/vivalto3gvn/vivalto3gvn.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/vivalto3gvn/overlay
