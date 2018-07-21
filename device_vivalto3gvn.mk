@@ -16,6 +16,9 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 # WiFi BCMDHD
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/firmware/bcm4343/device-bcm.mk)
 
+# Trusty Gatekeeper and Keymaster
+$(call inherit-product, system/core/trusty/trusty-base.mk)
+
 # AAPT configuration
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
@@ -199,6 +202,7 @@ PRODUCT_PACKAGES += \
 	android.hardware.camera.provider@2.4-impl-legacy \
 	android.hardware.wifi@1.0-service \
 	android.hardware.keymaster@3.0-impl \
+	android.hardware.keymaster@3.0-service \
 	android.hardware.radio@1.0 \
 	android.hardware.radio.deprecated@1.0 \
 	android.hardware.usb@1.0-service \
@@ -210,14 +214,16 @@ PRODUCT_PACKAGES += \
 	android.hardware.vibrator@1.0-impl \
 	android.hardware.sensors@1.0-impl \
 	android.hardware.memtrack@1.0-impl \
+	android.hardware.gatekeeper@1.0-impl \
+	android.hardware.gatekeeper@1.0-service \
 
-#	android.hardware.graphics.allocator@2.0-impl \
-#	android.hardware.graphics.composer@2.1-impl \
-#	android.hardware.graphics.mapper@2.0-impl \
 #	android.hardware.health@1.0-impl \
 #	android.hardware.thermal@1.1-impl \
 #	android.hardware.configstore@1.0-impl \
-#	android.hardware.gatekeeper@1.0-impl \
+#	android.hardware.graphics.allocator@2.0-impl \
+#	android.hardware.graphics.mapper@2.0-impl \
+#	android.hardware.graphics.composer@2.1-impl \
+#	android.hardware.graphics.composer@2.1-service \
 
 PRODUCT_PACKAGES += \
 	Snap \
