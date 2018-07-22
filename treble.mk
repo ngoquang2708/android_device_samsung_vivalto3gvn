@@ -65,9 +65,9 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service
 
 # Keymaster
-#PRODUCT_PACKAGES += \
-#    android.hardware.keymaster@3.0-impl \
-#    android.hardware.keymaster@3.0-service
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 # Gatekeeper
 #PRODUCT_PACKAGES += \
@@ -100,5 +100,5 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-service
