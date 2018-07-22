@@ -1,9 +1,6 @@
 # Inherit from the common product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from sprd-common device configuration
-$(call inherit-product, device/samsung/sprd-common/common.mk)
-
 # Inherit from vendor
 $(call inherit-product, vendor/samsung/vivalto3gvn/vivalto3gvn-vendor.mk)
 
@@ -136,14 +133,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/system/vendor/etc/spn-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/spn-conf.xml
 
-# Permissions
-files := \
-	frameworks/native/data/etc/android.hardware.camera.front.xml \
-	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml \
-
-PRODUCT_COPY_FILES += \
-	$(foreach f,$(files),$(f):$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/$(notdir $(f)))
-
 $(call inherit-product, $(DEVICE_PATH)/packages.mk)
+$(call inherit-product, $(DEVICE_PATH)/perm.mk)
 $(call inherit-product, $(DEVICE_PATH)/prop.mk)
 $(call inherit-product, $(DEVICE_PATH)/treble.mk)

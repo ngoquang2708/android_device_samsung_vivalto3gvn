@@ -1,6 +1,3 @@
-# Inherit from SPRD common configs
-include device/samsung/sprd-common/BoardConfigCommon.mk
-
 # Inherit from the proprietary version
 include vendor/samsung/vivalto3gvn/BoardConfigVendor.mk
 
@@ -43,6 +40,8 @@ BOARD_PROVIDES_LIBRIL := true
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 USE_BLUETOOTH_BCM4343 := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/libbt_vndcfg.txt
@@ -62,6 +61,10 @@ WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_NVRAM_PATH_PARAM := "/sys/module/dhd/parameters/nvram_path"
 WIFI_DRIVER_NVRAM_PATH := "/vendor/etc/wifi/nvram_net.txt"
 WIFI_BAND := 802_11_ABG
+
+# Audio
+BOARD_USES_TINYALSA_AUDIO := true
+TARGET_TINY_ALSA_IGNORE_SILENCE_SIZE := true
 
 # Graphics
 #HWUI_COMPILE_FOR_PERF := true
@@ -104,7 +107,7 @@ KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.
 TARGET_OTA_ASSERT_DEVICE := vivalto3gvn,vivalto3gvndx,vivalto3gub,vivalto3g,SM-G313HZ,SM-G313H,SM-G313ML
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Memory
 MALLOC_SVELTE := true
@@ -120,6 +123,9 @@ WITH_DEXPREOPT_PIC := true
 # Build system
 WITHOUT_CHECK_API := true
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+
+# LineageHw
+BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/lineagehw/
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

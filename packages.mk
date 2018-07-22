@@ -1,6 +1,10 @@
 # HALs
 PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
     audio.primary.scx15 \
+    libtinyalsa \
     libaudio-resampler \
     bluetooth.default \
     memtrack.scx15 \
@@ -13,6 +17,12 @@ PRODUCT_PACKAGES += \
     libmemoryheapion_sprd \
     libbt-vendor \
     sensors.scx15
+
+# WiFi
+PROFUCT_PACKAGES += \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    hostapd
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -44,5 +54,15 @@ PRODUCT_PACKAGES += \
     libstagefright_shim \
     libphoneserver_shim
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    f2fstat \
+    fibmap.f2fs \
+    fsck.f2fs \
+    mkfs.f2fs \
+    setup_fs
+
+# Misc
 PRODUCT_PACKAGES += \
     Snap
+
