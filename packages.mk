@@ -19,7 +19,7 @@ PRODUCT_PACKAGES += \
     sensors.scx15
 
 # WiFi
-PROFUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     hostapd
