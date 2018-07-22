@@ -5,3 +5,4 @@ type proc_cpw, fs_type;
 type proc_cpt, fs_type;
 type sysfs_restart_cpc, fs_type, sysfs_type;
 type sysfs_dynamic_pclk, fs_type, sysfs_type;
+type gps_data_file, file_type, data_file_type;

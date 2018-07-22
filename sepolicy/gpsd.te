@@ -1,3 +1,9 @@
+type gpsd, domain;
+type gpsd_exec, exec_type, file_type;
+
+init_daemon_domain(gpsd)
+net_domain(gpsd)
+
 allow gpsd radio_device:chr_file { read write ioctl open };
 allow gpsd sysfs_wake_lock:file { read write open };
 allow gpsd gps_data_file:fifo_file { read write open setattr };

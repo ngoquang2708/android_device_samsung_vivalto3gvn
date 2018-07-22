@@ -7,5 +7,5 @@ allow macloader efs_file:file { read open };
 allow macloader wifi_data_file:dir { read write search };
 allow macloader wifi_data_file:file { read open };
 allow macloader kmsg_device:chr_file { write open };
-allow macloader shell_exec:file { read execute open execute_no_trans };
+allow macloader shell_exec:file { read execute open };
 allow macloader self:capability dac_override;
