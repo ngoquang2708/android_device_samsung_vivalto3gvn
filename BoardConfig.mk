@@ -129,9 +129,9 @@ BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/lineagehw/
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-	/system/vendor/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so \
-	/system/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so \
-	/system/vendor/bin/gpsd|libgps_shim.so \
+    /system/vendor/lib/hw/camera.scx15.so|libmemoryheapion_sprd.so \
+    /system/vendor/lib/hw/camera2.scx15.so|libmemoryheapion_sprd.so \
+    /system/vendor/bin/gpsd|libgps_shim.so \
 
 # Treble
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
