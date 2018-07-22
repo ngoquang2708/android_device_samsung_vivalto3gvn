@@ -40,9 +40,9 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
 
 # Bluetooth
-#PRODUCT_PACKAGES += \
-#    android.hardware.bluetooth@1.0-impl \
-#    android.hardware.bluetooth@1.0-service
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
 
 # GNSS
 PRODUCT_PACKAGES += \
