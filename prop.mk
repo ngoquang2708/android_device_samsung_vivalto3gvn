@@ -87,3 +87,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.android.dataroaming=false \
     persist.sys.sprd.modemreset=0
+
+# Package Manager
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.dexopt.first-boot=extract \
+    pm.dexopt.boot=extract \
+    pm.dexopt.install=quicken \
+    pm.dexopt.bg-dexopt=speed-profile \
+    pm.dexopt.ab-ota=speed-profile \
+    pm.dexopt.inactive=verify \
+    pm.dexopt.shared=speed
