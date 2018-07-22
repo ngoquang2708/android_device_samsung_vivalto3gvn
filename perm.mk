@@ -16,5 +16,5 @@ files := \
     frameworks/native/data/etc/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml \
 
-files += \
+PRODUCT_COPY_FILES += \
     $(foreach f,$(files),$(f):system/etc/permissions/$(notdir $(f)))
