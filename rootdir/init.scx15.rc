@@ -81,6 +81,8 @@ on early-boot
     #
     mkdir /data/system 0770 system system
 
+    chmod 0444 /proc/cmdline # TelephonyManager need this
+
     chmod 660 /proc/cpt/wdtirq
     chmod 660 /proc/cpt/stop
     chmod 660 /proc/cpt/start
@@ -117,16 +119,13 @@ on early-boot
     chown system root /proc/cpwcn/modem
     chown system root /proc/cpwcn/dsp
 
-on boot
-    chmod 0444 /proc/cmdline # TelephonyManager need this
-
     chown system system /sys/module/mali/parameters/gpu_cur_freq
     chown system system /sys/module/mali/parameters/gpufreq_max_limit
     chown system system /sys/module/mali/parameters/gpufreq_min_limit
     chown system system /sys/module/mali/parameters/gpufreq_table
     chown system system /sys/kernel/debug/mali0/memory_usage
 
-    chown system system /sys/class/backlight/sprd_backlight/brightness
+    chown system system /sys/class/backlight/panel/brightness
 
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor

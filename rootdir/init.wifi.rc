@@ -34,7 +34,7 @@ on post-fs-data
     chown system wifi /efs/wifi/.mac.info
     chmod 0660 /efs/wifi/.mac.info
 
-on boot
+on early-boot
     chown wifi wifi /sys/module/dhd/parameters/firmware_path
     chown wifi wifi /sys/module/dhd/parameters/nvram_path
     setprop wifi.interface wlan0

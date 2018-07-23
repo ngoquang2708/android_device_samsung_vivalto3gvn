@@ -14,7 +14,7 @@ on init
     symlink /storage/sdcard1 /mnt/sdcard1
     symlink /storage/usbdisk /mnt/usbdisk
 
-on boot
+on early-boot
 # Sensors
     chown system system /sys/class/sensors/accelerometer_sensor
     chown system system /sys/class/sensors/accelerometer_sensor/raw_data
@@ -32,7 +32,7 @@ on boot
     chmod 0664 /sys/class/sensors/accelerometer_sensor/vendor
     chmod 0664 /sys/class/sensors/accelerometer_sensor/name
 
-# Flash    
+# Flash
     chown system radio /sys/class/camera/rear/rear_flash
     chmod 0660 /sys/class/camera/rear/rear_flash
 
@@ -104,26 +104,26 @@ on boot
     chown system system /dev/mem
 
 # Battery
-   chown system radio /sys/class/power_supply/battery/batt_reset_soc
-   chown system radio /sys/class/power_supply/battery/batt_slate_mode
-   chown system radio /sys/class/power_supply/battery/factory_mode
-   chown system radio /sys/class/power_supply/battery/siop_level
-   chown system radio /sys/class/power_supply/battery/wc_enable
-   chown system radio /sys/class/power_supply/battery/update
-   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/call
-   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/video
-   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/music
-   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/browser
-   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/hotspot
-   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/camera
-   chown system radio /sys/class/power_supply/battery/talk_wcdma
-   chown system radio /sys/class/power_supply/battery/talk_gsm
-   chown system radio /sys/class/power_supply/battery/call
-   chown system radio /sys/class/power_supply/battery/data_call
-   chown system radio /sys/class/power_supply/battery/gps
-   chown system radio /sys/class/power_supply/battery/wifi
-   chown system radio /sys/class/power_supply/battery/lte
-   chown system radio /sys/class/power_supply/battery/lcd
+    chown system radio /sys/class/power_supply/battery/batt_reset_soc
+    chown system radio /sys/class/power_supply/battery/batt_slate_mode
+    chown system radio /sys/class/power_supply/battery/factory_mode
+    chown system radio /sys/class/power_supply/battery/siop_level
+    chown system radio /sys/class/power_supply/battery/wc_enable
+    chown system radio /sys/class/power_supply/battery/update
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/call
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/video
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/music
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/browser
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/hotspot
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/camera
+    chown system radio /sys/class/power_supply/battery/talk_wcdma
+    chown system radio /sys/class/power_supply/battery/talk_gsm
+    chown system radio /sys/class/power_supply/battery/call
+    chown system radio /sys/class/power_supply/battery/data_call
+    chown system radio /sys/class/power_supply/battery/gps
+    chown system radio /sys/class/power_supply/battery/wifi
+    chown system radio /sys/class/power_supply/battery/lte
+    chown system radio /sys/class/power_supply/battery/lcd
 
 # Fake some battery state
     setprop status.battery.state Slow
